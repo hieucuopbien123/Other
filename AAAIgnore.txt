@@ -1,0 +1,21 @@
+# Các thứ mà ta k có thời gian học hay dùng nó nhưng rất hay:
+
+-> Winform:
+Winform là free opensource class lib là 1 phần của Microsoft .NET cung cấp nền tảng viết client app giao diện người dùng cho desktop, laptop và tablet
+
+-> Tạo autobot
+Trong các fanpage trên facebook, telegram, discord việc tạo bot là kỹ thuật quan trọng nhưng kp là teamdev làm. VD trong trang web của ta, ta cần tạo 1 conbot trả lời tự động hoặc khi trả lời sẽ tự chuyển đến facebook để hỏi bot cũng là kỹ thuật hay. Có tool free của GG cho phép tạo bot
+
+-> Flutter
+Flutter phù hợp với các ứng dụng focus về animation, layout phức tạp. React Native cũng cross-platform nhưng animation làm vất vả hơn, dù hiện tại đã có ThreeJS khiến mảng animation của React trở nên cực kỳ mạnh. 
+Flutter back bởi GG dùng JS, còn RN back bởi Facebook dùng Dart. 
+Flutter xây UX hiệu năng rất cao, giao tiếp gần như TT với native.
+
+
+
+
+
+
+
+
+

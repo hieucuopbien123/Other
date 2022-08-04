@@ -1,0 +1,24 @@
+# Nghành data analyst
+
+-> Basic
+Là thu thập, xử lý thông tin thống kê, từ đó đưa ra chiến lược phát triển cho công ty; hỗ trợ cho việc ra quyết định cho công ty dựa trên tính logic của các sự kiện cho quá khứ hơn là dựa vào cảm tính.
+VD: 1 công ty muốn phát hành 1 sản phẩm mới or cải thiện 1 sản phẩm của họ, họ phải có thu thập thống kê thông tin về đối tượng khách hàng, thị trường, đối thủ cạnh tranh, analyst sẽ đưa ra hướng đi phù hợp để đạt lợi nhuận cao nhất
+
+Có 4 hướng: Business analyst, Financial analyst, Data Scientist, Data Engineer
+
+Business analyst cần kiến thức về dữ liệu, tính lãi kép. Nâng cao khả năng toán học + machine learning -> Data Scientist
+
+Data Mining(khai phá dữ liệu) là 1 kỹ thuật phân tích dữ liệu để đoán các sự kiện tương lai.
+Data Visualization: trình bày thông tin bằng đồ thị
+
+Data cleaning: thao tác loại bỏ dữ liệu k chính xác, klq
+
+Nch là đa phần phải: sắp xếp và biểu diễn dữ liệu, đoán các sự kiện tương lai, phát hiện các lỗi phát sinh dựa vào số liệu bất thường để khắc phục,..
+
+Data requirement-> Data collection-> Data processing-> Data cleaning-> data analysis-> đơn giản hóa thành tài liệu biểu diễn số liệu
+
+SQL là ngôn ngữ cơ bản của mọi nhà phân tích dữ liệu. Các hệ thống database sử dụng ngôn ngữ SQL để query phổ biến là MySQL, Oracle,..
+Excel chỉ dùng cho các doanh nghiệp nhỏ, cần có kiến thức nâng cao của Excel
+R và Python cũng là những ngôn ngữ thống kê sử dụng phổ biến.
+Kiến thức về toán thông kê, probability theory.
+

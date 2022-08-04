@@ -1,0 +1,25 @@
+# Lập trình game
+
+-> Basic:
+Như ta đã biết: lập trình game sáng tạo vô hạn; nhiều nền tảng từ laptop, mobile đến game thực tế ảo, game metaverse; nhiều khâu như thiết kế, xử lý âm thanh, marketing, viết code, deploy, test; Nhiều ngôn ngữ hỗ trợ lập trình game; Nhiều framework, engine nổi tiếng, tối ưu, đơn giản cho lập trình game, có engine xd sắn các thứ, có engine phải xây từ scrach như SDL; Nhiều kiến thức về thị hiếu, vật lý, toán, thị trường game; Nhiều tính năng như màn hình di chuyển theo nhân vật, xây map, bắn đạn, tăng điểm; Nhiều kiểu game 2D, 3D, góc nhìn 1, góc nhìn 3, game giải đố đủ kiểu; bảo mật và hack game;
+
+Thông thường lập trình game ít nhất phải thành thạo 1 ngôn ngữ lập trình và có kiến thức về lập trình hướng đối tượng và thuật toán. 
+
+Front-end: giao diện đồ họa, xử lý âm thanh và hình ảnh
+Back-end: hệ thống mạng, server, hậu trường, logic phức tạp
+
+1 số game engine phổ biến: 
+- Stencyl: lập trình game không cần code mà chỉ cần kéo thả nhưng chỉ được với các game đơn giản. Tạo game trên Window, Mac, Linux, Android, IOS. 
+VD: game Impossible Pixel
+- Cocos2D: game engine mã nguồn mở dành riêng cho lập trình game 2D trên window, MAC, iOS, Android. Nó có thể tạo ra mọi game 2D thuần túy. Hỗ trợ C++, Lua, JS nhưng ngôn ngữ chính cần thành thạo là C++
+VD: Magic Rush
+- Unity là game engine miễn phí cho xBox, Playstation, Android, IOS, Linux, macOS, Windows. Dùng C# làm ngôn ngữ lập trình chính. Cho cả game 2D và 3D. Với game 2D thì nó k dễ sử dụng bằng cocos2Dx
+VD: Tân Tiên Kiếm Online
+- Unreal Engine 4 chuyên tạo game 3D. Tạo game được trên PC, PS4, xBox, Nintendo Switch. Được đánh giá là game engine tốt nhất. Sử dụng C++, hoàn toàn miễn phí. Vói các game mobile thì nó k thích hợp tạo các game nhẹ mà thường dùng cho game có độ phức tạp cao và nặng. 
+VD: Batman Arkham City (Return To Arkham)
+- SDL: phù hợp game 2d nhẹ code bằng C++ cho PC nên ít dùng
+- Felgo: dùng QML code game đa nền tảng nhưng bị splash screen bản free nên bỏ
+=> tốt nhất là dùng cocos2d cho game 2d, unreal engine cho 3D
+
+Game nhẹ 3D cho mobile bằng C++ thì dùng Unity tốt nhưng phải học thêm C# -> nó cũng dùng tạo game metaverse blockchain ok
+

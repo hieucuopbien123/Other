@@ -1,0 +1,46 @@
+Các kiến thức khác:
+
+
+# Phân biệt công ty Outsource và Product:
+Công ty Outsourcing nhận dự án làm và bàn giao sản phẩm. Còn công ty Product làm sản phẩm cho chính họ.
+VD: Công ty A thuê 1 bên công ty outsourcing code cho 1 tính năng mới của họ; Công ty B là 1 công ty Product vì họ có dev tự code tính năng của chính họ. VD công ty Momo có 1 đội dev từng chức năng cho cái ví thì Momo là công ty product
+Start up na ná Product nhưng nó là mới còn Product thì sp cũng có sẵn r và code thêm chức năng vào
+Outsourcing: dự án to, đông người, chuẩn có chứng chỉ, quy trình chuẩn, nhiều công nghệ, tranh giành dự án, cạnh tranh cao, mục tiêu sản phẩm dành cho ai k rõ ràng, yêu cầu vô lý về chức năng vô dụng cũng phải thực hiện.
+Product: quy mô nhỏ hơn, công ty nắm giữ sản phẩm nên dev hiểu được sản phẩm dành cho ai và biết chức năng này có ích gì trong thực tế, có thể thảo luận với cấp trên về chức năng này có nên làm k. VD trava là công ty product. Làm product dễ thở hơn trong khi outsourcing chậm bị chửi sấp mặt. Quy trình có thể k chuẩn lắm VD code frontend có thể chế ra design ở 1 số chỗ k cần chuẩn nhưng outsource mà sai là ăn cứt. Dự án lớn thì họ vẫn có quy trình chuẩn rõ ràng
+
+
+
+# Vị trí của ta trong thế giới lập trình về độ phổ biến:
+Lập trình web > lập trình di động > lập trình nhúng - iot
+Lập trình di động ít dev hơn lập trình web nên lương cao hơn 1 chút, còn lập trình nhúng - iot thì ít hơn hẳn nên tài liệu ít và học cũng khó liên quan đến thiết kế mạch lập trình trên các con chip nhỏ. Đa phần tuyển dụng toàn web với web. 1 người làm backend có thể xử lý dữ liệu cả cho mobile và web, k khác nhau là mấy, chỉ là 2 nền tảng này front end rất khác biệt
+Còn có các mảng ít code hơn nhưng nặng kỹ thuật như: DevOps chuyên deploy các sản phẩm. Có công ty xài server riêng thì công quản lý và chi phí lắp đặt cao, thay vào đó họ dùng cloud của amazon, google,.. có sẵn vài nghìn con server cho thuê thì nếu đủ tốt có thể thấy chức năng cung cấp k khác gì tự có server riêng chỉ bị nhược điểm duy nhất là phụ thuộc vào các công ty lớn khác mà thôi. DevOps sẽ phải nắm vững tất cả và các thứ như Azure, GCP, AWS, Docker, Kubernetes, ELK Stack,..; Data engineer chuyên xử lý dữ liệu quyết định đến chiến lược của công ty
+Còn các mảng ít code hơn nữa như: Tester, PM(quản lý dự án), BA(cầu nối với khách hàng),.. Đôi khi BA và PM là 1 sẽ tiện hơn
+Các mảng học cực nhiều lý thuyết và code khá nhiều như DM, ML, AI,..
+
+
+
+# Clean code
+# Computer
+# Nghành data analysis
+# DevOps
+# Lập trình nhúng
+# Path trong ứng dụng
+# Lập trình game
+# License open-source software
+# RFC
+# URI URN URL
+
+# Window
+-> Boot
+-> Powershell
+-> Sandbox
+
+
+
+# Other:
+-> Thứ tự dạy học trong trường: 
+Ngôn ngữ module C, Lập trình hướng đối tượng(Java), Cơ sở dữ liệu SQL, Ứng dụng desktop như C# .NET Winform ASP.NET, Start UML như Usecase cho ứng dụng / Class diagram cho hướng đối tượng / ER và activity diagram vẽ database, bắt gói tin học về mạng (dùng tool wireshark, Fiddler) => k tự học các thứ khác thì bốc cức
+
+-> Web service nó như 1 loại riêng của API chỉ dùng cho web. Nó dùng giao thức http là phổ biến nhất và 3 chuẩn chính là SOAP, REST và XML-RPC làm phương tiện giao tiếp. API có thể dùng bất cứ phương tiện giao tiếp nào để bắt đầu tương tác giữa các ứng dụng. VD: các cuộc gọi hệ thống bởi kernel linux API.
+
+

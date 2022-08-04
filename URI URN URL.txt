@@ -1,0 +1,21 @@
+# URI, URL và URN
+
+-> URL(uniform resource locator) là địa chỉ của tài liệu trên mạng máy tính.
+Vd: https://www.domain.com/folder/file.htm
+thì https là giao thức; www viết tắt của World Wide Web; domain.com là tên miền; folder và file trong folder.
+Trong lập trình thì nó chia nhiều trường hơn như queryString hay hash,.. nx. Có URL chỉ có file k có folder, có URL chỉ có folder k có file, vd các trang chủ web,..
+
+-> URI(Uniform Resource Identifier) là 1 chuỗi chứa ký tự xác định 1 tài nguyên vật lý or logic. URI bao gồm cả URL và URN. Nếu cái gì sử dụng URI thì tức là nó đang chỉ đến cả 2 loại này.
+Cấu trúc: scheme:[//authority]path[?query][#fragment] => 
+Vd: ldap://[2001:db8::7]/c=GB?objectClass?one
+tel:+1-816-555-1212
+=>Có thể k có các trường scheme(protocol của URL đó), authority. URI nó rất đa dạng cho mọi thứ chứ k chỉ URL cho mỗi trang web.
+
+-> URN(Uniform Resource Name) cx là địa chỉ của 1 tài nguyên duy nhất trên mạng thôi nhưng nó k cung sử dụng giao thức nào như 1 request trên mạng http hay 1 cuộc gọi tel. Nó chỉ cung cấp định danh tài nguyên trên mạng và đa số là ta k thể tìm bằng cách search trên url google đc.
+Vd: link cuốn sách Clean Code trên mạng bằng URL là: https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882
+link cuốn đó bằng URN là: urn:isbn:0132350882
+Cấu trúc: URN:NID:NSS với URN là URN luôn để báo hiệu đây là 1 URN; NID là namespace do IANA cấp ví dụ ISBN là namespace mã số sách quốc tế(có rất nhiều namespace khác); NSS là chuỗi xác định duy nhất đối tượng cụ thể
+
+-> Phân biệt: ISBN(International Standard Book Number) là mã số chuẩn quốc tế xác định 1 quyển sách; ISSN(International Standard Serial Number) là mã số chuẩn quốc tế cho xuất bản. 
+Để tìm 1 quyển sách bằng ISBN nó k hề ez. Mỗi quốc gia có một cơ quan ISBN riêng, phải truy cập dữ liệu lưu chiểu của quốc gia đó mới tra được thông tin cuốn sách. Ta k đi sâu vào vc tìm bằng URN là gì vì ta chỉ thao tác với URL. 
+

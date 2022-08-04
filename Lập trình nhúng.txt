@@ -1,0 +1,15 @@
+# Embedded Programming:
+
+-> Lập trình nhúng là 1 công việc IT lương cao và kiến thức rất rộng và khó. Ta k đi sâu vào nó mà chỉ cần có cái nhìn tổng quan về lập trình nhúng là gì?
+Lập trình nhúng chia làm 2 mảng software và hardware. Ta chỉ xét software=> có 2 hướng lập trình nhúng với Linux và nhúng với vi điều khiển
+
+Lập trình nhúng với linux là lập trình cho 1 thiết bị điện tử mà trung tâm xử lý là 1 vi xử lý, thường là chip ARM và có sẵn trên nó 1 phiên bản OS họ Linux. Công việc là lập trình phần mềm xử lý hoặc viết driver cho các thiết bị, lập trình GUI, xử lý ấm thanh, hình ảnh,..
+
+Lập trình nhúng với vi điều khiển là lập trình cho thiết bị điện tử mà trung tâm xử lý là vi điều khiển. Chức năng của thiết bị đó là điều khiển các thiết bị khác(robot, động cơ,..). Công việc chính là viết cái firmware(lập trình để kích các chân của con vi điều khiển lên mức 1 or 0) để nạp vào con vi điều khiển cho nó chạy.
+
+Firmware là tập hợp những ct máy tính cố định cung cấp kiểm soát, điều khiển cấp thấp cho các phần cứng của thiết bị điện tử. Các thiết bị như laptop, hệ thống nhúng, điều khiển tivi.. chứa firmware bên trong. Nó lưu trong bộ nhớ cố định vd như ROM máy tính. 
+=>Nói thì khó hiểu chứ thực ra nó chỉ là tương tác với các phần cứng khác của thiết bị mà thôi, ví dụ khi ta bật máy tính bằng cách bấm vào nút hay 1 thao tác click chuột nào đó thì làm sao tác động vào ROM hay các phần cứng bên trong cây máy tính được, phải thông qua 1 thứ gọi là firmware
+
+=>Lập trình nhúng cần tối thiểu là thông thạo C/C++ ở trình chuyên gia.
+
+

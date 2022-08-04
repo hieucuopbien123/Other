@@ -1,0 +1,47 @@
+# Window
+
+-> Boot
+Boot là quá trình khởi động của máy tính.
+Có 2 kiểu boot phổ biến là legacy và UEFI. 
+
+UEFI(Unified Extensible Firmware Interface) được phát hành bởi intel để giải quyết những điểm yếu của Bios và thay thế bios(legacy). Nó có nhiều ưu điểm hơn như khởi động nhanh hơn, xử lý 32bit, 64bit, sử dụng nhiều RAM hơn để địa chỉ hóa dữ liệu,...
+
+Để xác định máy đang chạy kiểu boot gì: window+R-> msinfo32->enter->check bios mode là UEFI hay BIOS là biết.
+
+Chạy UEFI boot cũng là 1 cách để khắc phục lỗi invalid partition table! khi khởi động.
+
+Chú ý khi đang sử dụng laptop mà máy tự nhiên tắt có thể gây ra lỗi win, lỗi hệ điều hành. 1 số TH ổ cứng bị dừng đột ngột sẽ dễ hỏng, có nguy cơ mất toàn bộ dữ liệu và có thể là NN gây ra lỗi invalid partition table!
+=> khi dùng phải đảm bảo tắt máy, k đc dừng đột ngột
+
+Lỗi Battery reaching end of usable life là lỗi pin laptop bị quá hạn k thể dùng nx.
+Máy tính hỏng pin vẫn có thể dùng TT bằng cách cắm nó vào nguồn điện or thay pin mới.
+
+Khi khởi động máy tính có thể dùng các phím tắt F1, F2, F12, CTRL+ALT+DELETE để bật BIOS setup, có thể xem rất nhiều thông số máy tính. Ta có thể run test để kiểm tra các lỗi khởi động, test các tính năng xem laptop gặp lỗi ở đâu.
+Để đổi chế độ bios: nháy F12 liên tục khi khởi động-> boot-> chọn chế độ->Apply->Exit là xong
+
+-> Powershell
+Registry là cơ sở dữ liệu lưu thông số kỹ thuật của window, những thông tin về sự thay đổi luôn. Nếu ta thay đổi các thành phần control panel, file thì registry sẽ được cập nhập. Nó nằm ở file dat trong thư mục window.
+Truy cập: WINDOW+R-> regedit
+Ta có thể chỉnh sửa, sao lưu(thành file .reg). Ví dụ máy tính báo lỗi do registry thì chỉ cần chạy lại file registry trước đó(ở chế độ safe mode là đc). 
+Vào safe mode: WINDOW+R->msconfig->boot->safe boot-> minimal: k vào đc mạng; network: vào được mạng; alternate shell: dùng cmd k dùng File Explorer; Active Directory Repair: truy cập vào thông tin cụ thể như thiết bị phần cứng-> restart.
+Registry có cấu trúc dạng cây, mỗi nhánh lưu thông tin riêng biệt. Nếu muốn hiểu sau về máy tính thì phải học về registry. 
+
+Powershell tự có trong window, nó mạnh hơn cmd nhiều. Powershell cho phép truy cập vào quản trị registry. Nó cho phép quản lý với những dòng lệnh phức tạp hơn cmd, VD trong linux thì terminal cho phép tải từ remote, cmd thì chỉ truy cập vào hệ thống chứ k làm đc v, nhưng power shell lại có thể
+
+Tất cả các lệnh cmd đều dùng đc trong powershell nhưng powershell cũng có thêm các lệnh mới và các lệnh tương đương như: cd/Set-Location, dir/Get-Children; rename/Rename-Item; Get-Alias <tên lệnh cmd>;
+
+VD: trong powershell có ls như linux còn cmd thì k.
+
+-> Sandbox
+Sandbox là ứng dụng cho phép người dùng cài đặt và trải nghiệm những ứng dụng nằm trong mỗi trường ảo cách ly hoàn toàn với hđh chính. Khi tắt sandbox thì mọi thứ trong môi trường ảo sẽ bị xóa vĩnh viễn, rất thích hợp cho việc thử nghiệm phần mềm, kể cả các phần mềm độc hại.
+
+Nó cung đầy đủ các thành phần window, ổ cứng ảo. Hầu hết máy tính win 10 đều hỗ trợ, trừ cùi lắm thì mới k có thôi.
+Nó chỉ chiếm 1 phần nhỏ trong ổ cứng.
+
+Check có sandbox k: rightclick on taskbar-> taskManager-> Performance-> CPU-> check nếu Virtualization là enabled thì đc
+C2: cmd-> systeminfo.exe -> nếu hiện Virtualization là enabled thì đc
+
+Để kích hoạt: window+S(phím tắt cho thanh search)-> Turn Windows features on or off-> check Windows Sandbox-> restart now->bật window sandbox như ứng dụng bth
+
+Để tắt chỉ cần làm tương tự r uncheck là đc.
+

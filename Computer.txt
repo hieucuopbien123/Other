@@ -1,0 +1,24 @@
+# Computer tối thiểu:
+
+-> Basic
+Để một cái máy tính chạy được thì cần có các bộ phận:
+RAM, ổ cứng, chip (hay CPU hay vi xử lý) là tối thiểu
+
+Ngoài ra còn có:
+Mainboard (bo mạch chủ): là để gắn các thứ vào, khi mua cây máy tính thì phải có 1 cái bo mạch đính kèm sẵn rồi để gắn card vào.
+Card màn hình: có 2 loại là onboard và rời. Mọi CPU đều có sẵn card màn hình loại onboard là cái cần để hiển thị màn hình cơ bản. Nhưng khi cần hiển thị đồ họa cao thì cần card màn hình (hay gọi là card đồ họa or card VGA(Video Graphic Adaptor)) rời gắn thêm vào bo mạch chủ. Tương tự card âm thanh nếu muốn hiển thị âm thanh chất lượng cao.
+Quạt tản nhiệt: cái cần để làm mát CPU, gắn liền vào CPU. K có quạt thì CPU nóng nhanh lúc nào cũng 100% và hỏng.
+ROM là cái cần để khởi động máy tính, bộ nhớ cố định gắn vào bo mạch chủ.
+Ngoài ra còn có chuột, màn hình, ổ cắm,..
+
+RAM có nhiều loại như SDRAM, DRAM,.. nhưng ta quan tâm hai loại phổ biến trên thị trường là DDR2 và DDR3 thuộc SDRAM, càng cao càng xịn. Nó là bộ nhớ đệm dùng khi ta thao tác với các ứng dụng cần có cái để lưu trong quá trình.
+Ổ cứng là cái lưu trữ lâu dài, phân chia thành các ổ C,D,E trong máy tính. Trên thị trường hiện nay có hai loại ổ cứng là: HDD(Hard Disk Drive) là đời cũ và SSD(Solid-State Drive) là phiên bản mới cải tiến hơn. Có ổ cứng SSD, máy sẽ khởi động trong vài giây nhanh hơn nhiều HDD.
+CPU có nhiều loại, nó chia theo vô số các hãng sản xuất, mỗi hãng lại có nhiều loại khác nhau VD: Intel, AMD,.. Intel dòng core i là phổ biến nhất hiện tại, VD dòng core i7 hiện đại hơn core i5 và i3,..
+
+Các loại cổng: 
+Cổng USB: là cổng kết nối các thiết bị ngoại vi như USB, điện thoại,.. VD ta cắm 1 đầu của dây sạc điện thoại vào máy tính. Cổng này bh cũng có nhiều loại khác nhau, một máy tính có thể có nhiều cổng USB.
+Cổng HDMI: kết nối với các thiết bị trình chiếu, truyền tải âm thanh hình ảnh chất lượng cao
+Cổng VGA(15 chân): công dụng tương tự như cổng HDMI nhưng HDMI là loại mới hơn. Vì nhiều nơi vẫn còn dùng dây VGA nên vẫn cần cổng này.
+Cổng Ethernet(hỗ trợ vào mạng): loại này phổ biến ở văn phòng vì vào mạng LAN cục bộ thông qua dây ethernet ổn định hơn là dùng wifi.
+Ngoài ra còn có nhiều cổng chằng chịt nx, ví dụ cổng kết nối vào tai nghe cũng là 1 loại cổng,..
+

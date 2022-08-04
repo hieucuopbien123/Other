@@ -1,0 +1,33 @@
+# License for open source software
+
+-> Basic
+﻿Phần mềm mã nguồn mở và đóng:
+Mã nguồn mở thì có cả cộng đồng, cập nhật liên tục, dễ bị hack. Còn mã nguồn đóng có đơn vị riêng hỗ trợ, cập nhật thì phải chờ, phí cao
+Ví dụ: Linux là hệ điều hành mã nguồn mở(hệ điều hành cx là 1 phần mềm), qt là phần mềm mã nguồn mở
+
+Copyleft là 1 dạng giấy phép cho người ta toàn quyền sử dụng một thứ gì đó: phần mềm, bài hát,..., ràng buộc vô cùng ít
+
+Các phần mềm mã nguồn mở hay đóng đều cần có giấy phép. License để chứng minh bản quyền rằng cái này do ai làm ra để đảm bảo ng khác k lấy nó làm của mình bán chuộc lợi. License cx đưa ra những ràng buộc mà người sử dụng và phân phối phải làm theo, ví dụ: phần mềm này muốn dùng phải mua giấy phép bản quyền của nó để sử dụng(ví dụ mua nhạc sổ xố để dùng nó cho nhạc của mình), và vẫn sẽ bị hạn chế về một số thứ nêu trong giấy phép trong quá trình sử dụng và phân phối. Muốn dùng phần mềm phải đồng ý các điều khoản của nó.
+
+Phần mềm mã nguồn mở có rất nhiều loại giấy phép: MIT,GPL,... Tức là dù source code của mã nguồn mở có thể dễ dàng tải về và người dùng tự sửa đổi thoải mái nhưng khi ng đó dùng và phân phối bản của mình vẫn phải tuân theo các quy định trong giấy phép của phần mềm.
+Giấy phép GPL là loại giấy phép phổ biến nhất vì nó có copyleft (hay GNU General Public License). Phần mềm phát sinh từ phần mềm có GPL cũng phải dùng giấy phép GPL. Được yêu cầu trả phí khi phân phối phần mềm(VD: Qt)
+
+Phần mềm mã nguồn mở có thế có bản quyền hoặc k có bản quyền nhé
+
+Giấy phép LGPL(GNU Lesser General Public License) ít bị ràng buộc hơn GPL, là một phiên bản sửa đổi của GPL.
+Giải quyết vấn đề: LGPL cho phép các phần mềm kp là opensource có thể truy cập tới các thư viện nguồn mở mà k cần công khai mã nguồn như giấy phép GPL. Nó là điểm khác biệt chính 2 loại license. Còn GPL thì dùng GPL thì các phần mềm sinh ra từ đó cx phải dùng GPL dù ng ta k muốn công khai cx bị ép phải công khai dù ta chỉ dùng có 1 phần nhỏ.
+
+GNU là một tập hợp những phần mềm miễn phí, nó cũng chỉ hệ điều hành Linux(GNU's Not Unix). Hầu hết các phần mềm trong GNU cấp theo GPL.
+
+Bên cạnh đó còn có nhiều loại giấy phép. Ví dụ: Apache là loại giấy phép cho phép đóng mã nguồn, thương mại hóa và giữ quyền bán sản phẩm (Nó là của Quỹ phần mềm Apache)
+
+Ngoài lề, các hình thức quản lý phần mềm bản quyền(vì người mua 1 license chỉ đc dùng 1 ứng dụng đó):
++>Stand-Alone: 1 license dạng stand-alone có thể cài trên máy tính, khi dùng phần mềm buộc có license do đó phải mua license cho từng máy nếu sử dụng nhiều máy.
++>Network: Ví dụ người ta mua 5 license thì chỉ đc dùng phần mềm đó ở 5 người dùng(đổi máy thoải mái miễn 5 ng dùng), nếu ô thứ 6 muốn dùng thì 1 trong 5 ông kia phải tắt đi. Đây là hình thức rất phổ biến vì họ có thể chia sẻ license cho nhau(network ở đây là mạng lưới, k lq j đến internet). Máy chủ quản lý license sẽ trong công ty. Công ty mua 5 thì máy chủ có 5 và chỉ 5 người trong công ty dùng đc cùng 1 thời điểm.
++>Site: trả 1 mức giá như nhau để tất cả mn đều dùng đc phần mềm. Sau khi trả xong thì share cho bao nhiêu ng dùng cx đc
++>Cloud: giống network license nhưng cần có mạng. Máy chủ nó ở trên mạng. 
++>Subcription: thuê trong 1 thời gian hoặc mua vĩnh viễn, gán cho người dùng. Có thể thanh toán theo thời gian. Ví dụ gg drive nó cho ta dùng free một phần nhưng nếu muốn dùng nhiều hơn thì phải mua nó, ta phải trả tiền mới dùng đc hoàn toàn.
+
+LTS là long-term support, hỗ trợ dài hạn. Ở đây hỗ trợ là trong suốt thời gian phát hành, họ có cam kết cập nhập và bảo trì phần mềm, chứ kp phát hành cho ta dùng r éo quan tâm gì nx. nếu k là LTS, các lỗ hổng sẽ xuất hiện và ứng dụng trở nên lỗi thời. 
+Với phiên bản được hỗ trợ dài hạn, dù có phiên bản khác mới hơn phiên bản được phát hành thì phiên bản LTS vẫn được hỗ trợ bảo trì update như bth. Cho nên dùng phiên bản này nó ổn định vl, cộng đồng đông đảo, k cần chạy theo phiên bản mới nhất nhưng vẫn được hỗ trợ từ tổ chức phát hành. Nên cân nhắc dùng phiên bản mới nhất hay phiên bản LTS nếu ta thích chạy theo cái mới chứ kp cái ổn định
+

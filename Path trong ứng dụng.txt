@@ -1,0 +1,25 @@
+# Path trong các ứng dụng
+Nó đúng trong nhiều ngôn ngữ lập trình khi dùng đến path như Qt C++
+
+
+-> Basic:
+﻿Thư mục root: là nơi bắt đầu của cấu trúc thư mục, chứa tất cả các thư mục khác.
+
+Tuy nhiên, khi nói đến thư mục root, ta thường xét thư mục của một cái gì cụ thể chứ kp thư mục root của toàn bộ chương trình. Do đó có thể có nhiều thư mục root. 
+
+Thư mục root của user thường là C:\User\User1 là root của User1 or C:\User\User2 là root directory của User2.(Cái đó được gọi là home’s directory)
+Còn thư mục root của 1 phần mềm là ổ cứng chứa phần mềm đó.
+Còn thư mục root của ổ cứng là ổ cài win thg là C:\
+(mới vào Command Prompt sẽ ở thư mục root của user hiện tại, dùng cd / sẽ quay về root của ổ cứng)
+
+Còn current directory của 1 phần mềm là thư mục chứa phần mềm đó, thường là C:\Program Files\<tên phần mềm>
+Ví dụ trong Qt, khi build nó sẽ tạo ra thư mục debug và nó sẽ run file exe trong thư mục debug. =>thư mục Debug là current directory của phần mềm exe đó(vì chính cái file exe đó là 1 phần mềm).
+
+Trong Qt có lệnh in ra thư mục root, do ta cài qt vào ổ C nhưng lưu project vào ổ B nên cả 2 ổ nó đều hiểu là root(1 của Qt, 1 của file exe). Thực chất file lưu dự án là cái ổ cứng đang chứa file exe mới là root thực sự của phần mềm đang chạy (root của phần mềm .exe đó)
+
+Bên cạnh  home, root, current còn có temporary directory trên window thg ở trong C:\Users\<tên Users>\AppData\Local\Temp.
+Temprorary File là nơi chứa các file lưu tạm của các phần mềm trên máy như bộ nhớ cache, càng nhiều phần mềm thì chiếm càng lớn. Khi sử dụng một phần mềm nào đó, chúng sẽ tạo ra các file tạm thời trong thư mục Temporary này để hoạt động. Sau khi đã lưu file đang sử dụng trên phần mềm thì các file tạm đó sẽ được xóa đi ngay lập tức.
+
+Các thao tác với file:
+thư mục root luôn bắt đầu bằng tên ổ or dùng luôn \ (Vd:"\<...>"); dấu ".." đi lên parent; dấu "." chỉ vào thư mục hiện tại đang làm vc; dấu "~\" là thư mục nhà.
+

@@ -1,0 +1,28 @@
+# DevOps:
+
+-> Basic
+DevOps là sự hợp tác 2 giai đoạn phát triển(development) và vận hành(operations). Khái niệm DevOps ra đời nhằm tối ưu hóa chu trình phát triển phần mềm, giúp sản phẩm IT được release nhanh và thường xuyên hơn
+
+Giai đoạn phát triển là việc của designer, developer,... Giai đoạn vận hoành thì có release engineer, network engineer, security engineer, system administrator,..
+Các công ty có quy mô thì 2 giai đoạn này tách rời nhau. DevOps sẽ tối ưu hóa chu trình phát triển. Nó cũng chỉ là 1 cách làm việc để tạo ra 1 sản phầm IT.
+
+Chính vì developer là người phát triển nên anh ta hiểu rõ sản phẩm của mình nhất nên ngày xưa họ kiêm luôn test và deploy sản phẩm. Nhưng quy mô tăng dần nên hệ thống phình to ra, thay vì 1 vài server thì hệ thống lên tới hàng trăm cái, thâm chí hàng triệu(Google, Facebook,..) thành ra Dev và Ops bị tách ra.
+Nhưng nhu cầu phát triển xong cải tiến liên tục làm cho các này làm chậm quá trình đó. 
+VD: 1 trang web bán hàng có nhiều feature như đăng nhập, tìm kiếm và mỗi cái là 1 service riêng, dùng database và language riêng. V thì làm sao để các bộ phận hợp tác trơn tru và các server giao tiếp hiệu quả. 
+DevOps cần các kỹ năng như deploy, optimizing, code, automate hệ thống, hiểu về sản phẩm của công ty để viết test, review bug, sử dụng được cũng như viết ra các công cụ tự động hóa,..
+K còn kiểu dev làm xong thì Ops mới vận hành như trước mà DevOps tham gia phát triển cùng với Dev luôn để hiểu về sản phẩm và logic code. Khi đó khi deploy gặp vấn đề thì DevOps Engineer có thể chủ động tìm lỗi và fix luôn mà k cần chờ developer
+
+DevOps chuyển mô hình phát triển phần mềm từ thác nước sang kiểu phát triển/phát hành liên tục(phương pháp Agile)
+
+Ví dụ, Tấn là System Engineer kiêm DevOps Engineer. Tấn muốn deploy version mới của sản phẩm lên 100 server. Nếu thực hiện việc này thủ công thì sẽ mất rất nhiều thời gian, và không tránh khỏi sai sót.
+Trong trường hợp deploy thành công 50 con server, còn 50 con thất bại, thì cũng có nghĩa là sản phẩm của mình thất bại. Bởi vì cùng lúc sản phẩm sẽ chạy 2 version khác nhau, mà mình lại không kiểm soát 2 version này được. Muốn khắc phục thì cũng phải có thời gian.
+Như vậy, để deploy nhanh hơn, hỗ trợ việc back-up, restore, đồng thời giảm thiểu rủi ro, thì với vai trò DevOps Engineer, Tấn sẽ viết automated script để ship code tự động lên server.
+
+Do đó DevOps đòi hỏi kỹ năng lập trình cứng thg dùng ngôn ngữ Python, Shellscript, thông thạo hệ điều hành đang dùng và khả năng research tốt; hiểu về các lỗ hổng bảo mật; biết cài và sử dụng các web server phổ biến, dùng docker, proxy, firewall, load balancer, caching server, reverse proxy, các dịch vụ cloud, các tool triển khai cũng như monitoring server.
+
+Microservices: Một sản phẩm lớn được chia tách làm rất nhiều service nhỏ, các service này liên kết với nhau tạo thành một sản phẩm hoàn chỉnh.
+
+Có 2 road map riêng rất lớn để trở thành 1 DevOps dù nó k được coi là 1 nghành nghề mới.
+
+VD blockchain DevOps thì: biết cách deploy contract, kết nối Dapp với ví, kết nối với smart contract, biết cách xử lý pivkey and toàn, hiểu về piv blockchain
+

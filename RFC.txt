@@ -1,0 +1,14 @@
+# RFC
+
+-> Basic:
+RFC(Request for Comments) là 1 chuỗi các bản ghi nhớ những nghiên cứu mới, phương pháp mới và ứng dụng cho công nghệ internet hiện đại hơn.
+Thông qua mạng xã hội internet các kỹ sư, các nhà khoa học có thể công bố văn bản dưới hình thức là một bản ghi nhớ RFC điều này giúp để các nhà phê bình đánh giá hay đơn giản chỉ là thông cáo đến mọi người về quan điểm mới, tin tức hay những điểm thú vị về kỹ thuật nào đấy. Các tổ chức phụ trách RFC có tên là Internet Engineering Task Force  viết tắt là IETF sẽ chấp nhận các thông tin phù hợp và tích hợp vào thông qua một bản ghi RFC.
+
+Không chỉ ứng dụng trong các dịch vụ email mà RFC còn có tính ứng dụng rất rộng nhờ nó mà internet có thể học hỏi và phát triển hơn từng ngày với sự phát triển của cộng đồng toàn thế giới nhờ vậy mà nhiều ứng dụng mới ra đời liên tục, không phải bản ghi RFC nào cũng là tiêu chuẩn chung nhưng phần lớn các bản ghi do IETF đều đạt được những chuẩn chất lượng rất tốt.
+
+Để có một phẩn RFC hoàn chỉnh các chuyên gia phải trải qua rất nhiều quy trình từ việc công bố để nhận những góp ý, phê bình đến việc xây dựng ra những ứng dụng thực tế cần rất nhiều thời gian. RFC được biết đến từ những năm 1969 những bản ghi đầu tiên được đánh bằng máy đánh chữ nhưng để tiện lợi lơn họ đã phát triển các bản ghi RFC qua mạng World Wide Web.
+
+Có thể nói RFC là những bản ghi tưởng chừng rất lỗi thời nhưng đây là một trong những công nghệ góp phần thay đổi bộ mặt của internet hiện đại ngày nay.
+
+VD: https://www.rfc-editor.org/info/rfc3435
+

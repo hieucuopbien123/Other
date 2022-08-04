@@ -18,6 +18,11 @@ Còn các mảng ít code hơn nữa như: Tester, PM(quản lý dự án), BA(c
 Các mảng học cực nhiều lý thuyết và code khá nhiều như DM, ML, AI,..
 
 
+# POC(Proof of Concept)
+1 ứng dụng chứng minh tính khả thi của 1 ý tưởng or 1 method nào đó=> giúp cho việc chứng minh 1 ý tưởng gì là đúng, giúp ta đi đúng vào 1 cái hướng có tính thực tiễn, khả thi chứ kp là mãi mãi chỉ là lời nói k thể áp dụng thực tiễn, giúp tăng tính thuyết phục về ý tưởng.
+Ví dụ ta nói proof of concept của cái gì tức là ta đang đưa ra những lý lẽ của nó và nó áp dụng trong thực tế khả thi ntn
+
+
 
 # Clean code
 # Computer

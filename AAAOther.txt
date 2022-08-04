@@ -35,6 +35,21 @@ Các mảng học cực nhiều lý thuyết và code khá nhiều như DM, ML, 
 -> Powershell
 -> Sandbox
 
+# Qt/Concurrency
+# Qt/Hook
+# Qt/Multimedia
+# Qt/XML
+# Qt/Wifi
+# Qt/Winadmin
+# Qt/Static and dll lib
+# Qt/OpenSSL Doxygen
+# Qt/Mã hóa
+# Qt/TCP
+# Qt/Test
+# Qt/Window service
+# Qt/Zip
+# Qt/Encode và decode
+
 
 
 # Other:

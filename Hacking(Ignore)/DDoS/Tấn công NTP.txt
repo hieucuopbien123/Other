@@ -1,0 +1,52 @@
+# Tấn công NTP
+
+-> NTP Flood(NTP Amplification) Network Time Protocol là 1 giao thức mạng lâu đời đồng bộ hóa thời gian giữa các hệ thống điện tử. Kiểu tấn công này sẽ khai thác lỗ hổng các máy chủ NTP có thể truy cập công khai để làm quá tải mạng đích với số lượng lớn các gói UDP.
+Giao thức này thiết kế ra để tránh ảnh hưởng đến độ trễ biến đổi bằng cách sử dụng bộ đệm fitter.
+
+jitter là sự biến động về độ trễ trên toàn mạng(tốc độ thay đổi về độ trễ đó), độ trễ là khoảng thời gian gửi từ điểm này đến điểm khác, nó kbh là lý tưởng(=0). Jitter nên thấp nhất có thể để sự trễ k bị biến động quá lớn. Độ trễ lớn cũng k ảnh hưởng lắm nếu jitter thấp. jitter khi truyền trên mạng nên dưới 30ms, tỉ lệ gói tin bị thất lạc mất ít hơn 1%, độ trễ mạng tổng thể dưới 150ms là chấp nhận đc. Đó là tiêu chuẩn của Cisco(thương hiệu có sản phẩm định tuyến nổi tiếng)
+Khi thực hiện cuộc gọi VoIP, giọng nói được mã hóa và truyền đi, trong quá trình truyền tin, nó cạnh tranh với các lưu lượng truy cập khác trong mạng của ta, tất cả các dữ liệu này đều tốn đến tài nguyên mạng.
+Khi gửi email, các gói tin được ghép lại trước khi đến người dùng đảm bảo k bị thất lạc, các cuộc gọi VoIP thì k có thời gian cho vc này và giọng nói gửi đi k theo thứ tự nên bị ảnh hưởng bởi jitter mạng. Email dù nghẽn mạng nhưng nếu gửi đc, nó sẽ gửi tới nơi đầy đủ. 
+
+Bộ đệm jitter là 1 giải pháp giúp giảm jitter mạng. Nó lưu các gói đến trong 1 khoảng thời gian ngắn 30-200ms trong bộ đệm trước khi chuyển đi. Vc lưu lại sẽ giúp các gói đến đúng thứ tự hơn khi mà một gói cần chưa có thì lưu lại 1 khoảng ngắn chờ nó r đi tiếp, giảm thiểu jitter. Nhưng vc giữ lại gói sẽ thêm độ trễ. 
+1 số cách khác:
+Ưu tiên gói là 1 loại cài đặt QoS(Quality of Service) để giảm tắc nghẽn mạng. Lưu lượng ưu tiên sẽ ưu tiên gửi trc trong mọi Th, VD ta cài mọi gói chứa phương tiện VoIP đều đc ưu tiên hơn các lưu lượng khac. Nếu quá tải dữ liệu thì lưu lượng k ưu tiên sẽ bị xóa trc lưu lượng đc ưu tiên.
+VD: Để ưu tiên lưu lượng VoIP, ta phải ưu tiên giao thức vận chuyển thời gian thực gói RTP(Real-time Transport Protocol). Điều này phụ thuộc vào thiết kế trên bộ định tuyến của ta-> chuyển sang chế độ xem QoS trên giao diện web-> nhập số cổng của giao thức-> khởi động lại.
+Mua bộ định tuyến khác nh băng thông or nâng cấp băng thông, chuyển sang kết nối internet mạng có tốc độ cao
+
+Đa phần jitter kp là vấn đề nhưng nếu trong các hội nghị lớn thì phải triển khai QoS để quản lý jitter của mạng ngay cả khi k bị jitter mạng. Dùng nó để theo dõi hiệu suất mạng và nếu lag jitter quá ngưỡng của Cisco vạch ra thì ưu tiên chuyển các gói quan trọng ngay.
+
+Để truy quản lý băng thông, ta phải vào được QoS của router thông qua gateway của router(check bằng ipconfig), thg là 192.168.1.1-> gõ vào browser-> đăng nhập: username/password thg mặc định là admin or user. Ta có thể tự set username, password theo ý thích, nếu set xong r quên thì có thể reset lại. Với Viettel router, để reset ta giữ nút reset trong 10s để khôi phục mặc định. Router Viettel có default username là admin, default password là Serial Number ghi bên dưới router bắt đầu bằng "DSNW..."
+Trong nhiều Th ví dụ ở các mạng khác, username và password nó lấy là mã số hợp đồng hay gì phức tạp hơn nhưng thg là gắn nó trên router-> vào được r ta có thể đổi password, giới hạn lưu lượng truy cập ưu tiên gói tin nào, ưu tiên thiết bị có địa chỉ ip nào or nhiều loại còn cho ưu tiên theo mục đích nào gọi void hay chơi game,..
+
+Cơ chế hoạt động của NTP: NTP client gửi 1 gói tin chứa thẻ thời gian. NTP server nhận được gửi trả gói tin chứa thẻ thời gian thời điểm nó gửi gói tin đi. NTP client nhận được sẽ tính toán độ trễ và cộng với độ trễ đó để ra thời gian hiện tại. 
+NTP server giúp các thiết bị có thời gian chuẩn. Nhiều ứng dụng sử dụng timestamp để xác định phiên bản của ứng dụng nên bắt buộc phải có thời gian chuẩn mới hoạt động đúng bản dữ liệu, các giao dịch trực tuyến cx yêu cầu thời gian phải chính xác,..
+
+window time service là dịch vụ của window giúp cập nhật thời gian hiện tại. Nó kết nối với các time server để cập nhật thời gian. Window 10 sử dụng time server nào tùy từng quốc gia để cập nhập thời gian cho máy tính. Các tổ chức đó có thời gian đúng vì họ sử dụng đồng hồ nguyên từ Cesium atomic clock để theo dõi thời gian, chúng k có bộ phận chuyển động nên k thể sai lệch. Bên cạnh đó, máy tính cx tự nhớ được thời gian. Khi mất mạng, PC vẫn hiển thị thời gian chính xác vì UEFI/BIOS đều ghi nhớ thời gian, nó là chương trình tiền hệ điều hành.
+Khi tắt máy và rút điện, chương trình vẫn còn 1 đồng hồ ẩn bên trong nx giúp theo dõi thời gian, đó là vì bo mạch chủ có viên pin CMOS(Complementary Metal Oxide Semiconductor battery) giúp đồng hồ vẫn hoạt động. Viên pin này tuổi thọ tầm 10 năm nên nếu máy tính cũ khởi động máy mà thời gian k chính xác nx thì có thể do viên pin này đã hỏng và báo lỗi CMOS error khi khởi động
+
+NTP server là thiết bị nhận biết yêu cầu đồng bộ thời gian và phân phối nó thông tin thời gia bằng giao thức NTP. Tín hiệu thời gian dùng hầu hết bởi các NTP server là UTC(Coordinated Universal Time) là thời gian toàn cầu dựa trên đồng hồ nguyên tử. Nó có vai trò đồng bộ hóa hàng triệu máy tính khắp thế giới. 
+
+Stratum level: Để tránh quá tải các request cho máy chủ thì các máy nhận tín hiệu thời gian từ NTP server có thể sử dụng như 1 tham chiếu tới máy chủ NTP gọi là stratum level. Nó xây theo mô hình cây càng xuống dưới thời gian càng k chính xác. NTP có đến 16 tầng khác nhau. Để tăng độ chính xác thì mỗi client nhận được nguồn thời gian từ nhiều máy chủ và NTP liên tục giám sát để lấy số liệu tốt nhất. 
+
+Trên mạng có nhiều các public NTP server, http://www.pool.ntp.org/ có tổng hợp. Nó có 2 danh sách máy chủ primary server(stratum level 1) và secondary servers. Stratum level chỉ cho phép những client nào họ đồng ý kết nối và nó lấy từ nguồn thời gian trực tiếp đồng hồ nguyên tử, các máy chủ thứ cấp thg là Stratum 2 nhận từ stratum 1.
+
+Start menu-> service -> window time-> thích start hay stop service window time của window để tự động synchronous thời gian hay k
+
+Cách mở 1 cổng bất kỳ của firewall: control panel-> System and Security-> Windows Defender Firewall-> Advanced settings-> Inbound rules-> new rules-> 
+Port-> chọn kiểu TCP hay UDP và port để quyết định mở cổng nào-> tùy chọn-> next liên tục->đặt tên-> finish-> tương tự xóa được các rule 
+
+Sử dụng NTP server public để cập nhật tg: control panel-> clock and region-> date and time-> internet time-> change settings-> ghi tên NTP server muốn connect. Có nh trang cung cấp public NTP server như https://www.pool.ntp.org/zone/vn vd: 0.vn.pool.ntp.org
+Mặc định nó dùng time.windows.com server -> để hiển thị chuẩn, vào date and time setting để chỉnh múi giờ
+
+Tấn công DDoS bằng NTP là dựa vào 1 lỗ hổng của lệnh monlist. NTP là giao thức đã biết, người dùng có thể gửi request tới server để server gửi lại data thời gian thông qua giao thức này. Trong các lệnh request có 1 lệnh là monlist. Lệnh này là mọi request gửi tới server thì NTP server đều trả lại 1 danh sách cácc máy tính đã kết nối tới server đó. Hacker chỉ cần gửi request, sửa source IP gửi request là IP của nạn nhân-> NTP server sẽ gửi lại response về máy nạn nhân dù nạn nhân chả gửi request nào. 
+Đặc điểm là 1 request kích thước nhỏ nhưng data trả ra lại lớn hơn nh điều này làm các nạn nhân có IP kia nhận quá nh và nghẽn mạng. 
+VD 1 request: ntpdc –c monlist <ip> 
+
+=> Để vá lỗ hổng rất đơn giản, chỉ cần các client chặn hết các gói tin UDP ở cổng 123(cổng mà NTP gửi vào) và các công ty chạy NTP server cập nhập lên phiên bản mới nhất đã k còn public lệnh monlist nx là xong. 
+Code khai thác lỗ hổng này có thể tìm dễ dàng trên Pastepin - nền tảng chia sẻ lưu trư code, văn bản
+
+Mạng botnet là 1 mạng máy tính được điều khiển từ xa bởi tin tặc, chỉ sự kết hợp giữa robot và network.
+Chúng có thể sử dụng virus trojan xâm phạm vào máy tính và cho máy tính đó kết nối vào mạng vì mục đích xấu-> khi đó mỗi máy tính trong mạng bị điều khiển trở thành 1 con bot và kẻ xấu lợi dụng để truyền malware, spam,.. Khi đã có nhiều máy tính bị điều khiển, tập hợp lại thành 1 mạng gọi là botnet trong đó các máy tính sẽ trở thành zombie do 1 người khác điều khiển chứ kp chủ nhân của máy tính, người bị hại có thể hay biết gì về vc máy mình đang bị điều khiển. Tên tội phạm điều khiển gọi là botmaster.
+Hắn có thể điều khiển các máy trong botnet làm gì đó như cùng lúc tấn công vào 1 address chỉ định or spam, lấy thông tin cá nhân,.. Máy bot sẽ phải hoạt động do thg kia điều khiển và giá điện sẽ tăng
+=> Để tấn công bằng botnet thì người dùng kiểu gì cx phải tải cái gì đó hay dùng app chứa troja từ nguồn của hacker-> chính vì lý do này nên làm hacker đâu có dễ :))
+

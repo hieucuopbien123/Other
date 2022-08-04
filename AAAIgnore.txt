@@ -11,8 +11,9 @@ Flutter phù hợp với các ứng dụng focus về animation, layout phức t
 Flutter back bởi GG dùng JS, còn RN back bởi Facebook dùng Dart. 
 Flutter xây UX hiệu năng rất cao, giao tiếp gần như TT với native.
 
-
-
+-> Hacking
+--> DDoS
+=> Nó quá dài
 
 
 

@@ -24,6 +24,13 @@ Ví dụ ta nói proof of concept của cái gì tức là ta đang đưa ra nh�
 
 
 
+# Các chức vụ
+SA: System administrator - quản trị viên hệ thống
+CTO: Chief technology officer - giám đốc công nghệ, là người quản lý cấp cao
+PM: Project manager - quản lý dự án
+
+
+
 # Clean code
 # Computer
 # Nghành data analysis

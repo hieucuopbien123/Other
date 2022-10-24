@@ -15,8 +15,15 @@ Flutter xây UX hiệu năng rất cao, giao tiếp gần như TT với native.
 --> DDoS
 => Nó quá dài
 
+-> Hook và lập trình win32:
+Hook là 1 cơ chế dùng để chắn ngang các lời gọi hàm, sự kiện trước khi nó đến một ứng dụng. Từ đó có thể sửa đổi theo ý ta, gia tăng hành vi, thêm chức năng or đổi chức năng của ứng dụng. Lập trình hook có thể tùy chỉnh điều này. Nó là 1 kỹ thuật trong lập trình win32
+Win32 là viết tắt cho cụm từ Windows 32-bit, Win32 API cung cấp cho ta một số lượng hàm, thủ tục nhất định để ta dễ dàng tạo ra một chương trình window or window SDK theo ý muốn
 
+-> Autocad:
+Phần mêm vẽ kỹ thuật bằng đồ họa vector trong kiến trúc, có thể vẽ cấu trúc 3d tòa nhà hay các thứ
 
+-> WebGL:
+Có thể sẽ không bao giờ học vì nó giúp code front end nhưng ở tầng level quá thấp nên rất phức tạp, không đủ thời gian. Nó là thứ giúp tương tác với GPU để render đồ họa cao, bao gồm 3D model và các hiệu ứng cực đẹp. K thiếu series dạy.
 
 
 

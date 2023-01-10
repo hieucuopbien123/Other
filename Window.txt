@@ -45,3 +45,9 @@ C2: cmd-> systeminfo.exe -> nếu hiện Virtualization là enabled thì đc
 
 Để tắt chỉ cần làm tương tự r uncheck là đc.
 
+-> Cài win:
+Tải mediacreationtool từ trang chủ: https://www.microsoft.com/en-us/software-download/windows10 rồi chạy nó -> Nó yêu cầu có product key ta có thể thay thế bằng KMS Client Product Key tạm thời lấy từ: https://learn.microsoft.com/en-us/windows-server/get-started/kms-client-activation-keys cho window10 tùy phiên bản -> cài bth -> xóa window old, file cài đặt -> có thể chỉnh bios hay setup dùng visualization cho window 10 -> activate win -> update win
+=> Các lỗi khác search gg
+
+-> Driver: thứ giúp tương tác với phần cứng, VD mouse driver, keyboard driver. Nó là kernel mode
+

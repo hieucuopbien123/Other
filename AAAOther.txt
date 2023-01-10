@@ -18,6 +18,7 @@ Còn các mảng ít code hơn nữa như: Tester, PM(quản lý dự án), BA(c
 Các mảng học cực nhiều lý thuyết và code khá nhiều như DM, ML, AI,..
 
 
+
 # POC(Proof of Concept)
 1 ứng dụng chứng minh tính khả thi của 1 ý tưởng or 1 method nào đó=> giúp cho việc chứng minh 1 ý tưởng gì là đúng, giúp ta đi đúng vào 1 cái hướng có tính thực tiễn, khả thi chứ kp là mãi mãi chỉ là lời nói k thể áp dụng thực tiễn, giúp tăng tính thuyết phục về ý tưởng.
 Ví dụ ta nói proof of concept của cái gì tức là ta đang đưa ra những lý lẽ của nó và nó áp dụng trong thực tế khả thi ntn
@@ -28,6 +29,16 @@ Ví dụ ta nói proof of concept của cái gì tức là ta đang đưa ra nh�
 SA: System administrator - quản trị viên hệ thống
 CTO: Chief technology officer - giám đốc công nghệ, là người quản lý cấp cao
 PM: Project manager - quản lý dự án
+
+
+
+# MFA (Multi-factor authentication) 
+Xác thực đa yếu tố là có thêm 1 lớp bảo mật nữa như nhận mã xác thực qua điện thoại or vân tay,..
+
+
+
+# Dial up VPN
+Cho phép user connect vào internet bằng POTS truyền thống or đường dây điện thoại ISDN. Virtual private network protocol giúp bảo mật các connection kết nối remote. Nch là 1 kiểu vào mạng cũng như truyền tin an toàn.
 
 
 
@@ -64,6 +75,11 @@ PM: Project manager - quản lý dự án
 
 
 
+# Microservices
+Là mô hình phần mềm, 1 ứng dụng khổng lồ chia ra thành càng nhiều mô đun nhỏ càng tốt, thay vì làm nguyên khối. Các hãng lớn như netflix đều dùng kiểu này, các mô đun có thể được viết bằng nhiều ngôn ngữ khác nhau và tương tác thông qua API. Vì mỗi mô đun chỉ lo các tính năng riêng nhỏ nên code đơn giản, nhưng phải quản lý các microservice tương tác với nhau hợp lý tránh rắc rối.
+
+
+
 # Các series hay nhưng k thực tiễn
 -> Discovering hidden API: là hướng dẫ tìm ra các API ẩn trong website, có thể dùng nó để hack mở khóa các page ẩn thông tin hay trả phí để xem thông tin
 series: https://www.youtube.com/watch?v=twuhocLtGCg&list=PLyb_C2HpOQSCAi67ZF0w-6CvCvZs_OXAB&index=1
@@ -75,5 +91,7 @@ series: https://www.youtube.com/watch?v=twuhocLtGCg&list=PLyb_C2HpOQSCAi67ZF0w-6
 Ngôn ngữ module C, Lập trình hướng đối tượng(Java), Cơ sở dữ liệu SQL, Ứng dụng desktop như C# .NET Winform ASP.NET, Start UML như Usecase cho ứng dụng / Class diagram cho hướng đối tượng / ER và activity diagram vẽ database, bắt gói tin học về mạng (dùng tool wireshark, Fiddler) => k tự học các thứ khác thì bốc cức
 
 -> Web service nó như 1 loại riêng của API chỉ dùng cho web. Nó dùng giao thức http là phổ biến nhất và 3 chuẩn chính là SOAP, REST và XML-RPC làm phương tiện giao tiếp. API có thể dùng bất cứ phương tiện giao tiếp nào để bắt đầu tương tác giữa các ứng dụng. VD: các cuộc gọi hệ thống bởi kernel linux API.
+
+-> Liệu có code được 1 đoạn mã call api từ remote server bằng C thuần hay dựng 1 web server với nó, k dùng thư viện. Điều này là có thể, bên trong hệ điều hành luôn có module built-in giúp thao tác với network. Nếu lúc nào cũng dựa vào thư viện thì làm sao máy tính connect được với wifi hay lấy các thông số với thời gian cũng như chạy lệnh ping chẳng hạn. Các package hay thư viện http ta sử dụng ở tầng thấp nhất của nó chính là dùng các module built-in của hệ điều hành mà thôi. Do đó trong C nếu có thể thao tác với phần cứng thì có thể trigger các module này để thao tác với network.
 
 

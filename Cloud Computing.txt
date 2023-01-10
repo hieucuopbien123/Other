@@ -1,0 +1,66 @@
+Cloud Computing
+
+
+
+# Basic
+-> Internet truyền thống
+Phần lớn kết nối trên mạng hiện giờ là client-server. VD: chat với nhau qua facebook, tin nhắn A sẽ gửi đến máy chủ r máy chủ gửi tiếp cho user B. Quá trình gửi nhận thông tin liên tục lặp lại và những kết nối này tạo thành mạng lưới internet ngày nay. 
+Và để đảm bảo hoạt động tốt, họ đặt nhiều máy chủ cạnh nhau trong 1 nơi rộng lớn gọi là data center để dễ bảo quản. 1 data center có thể chứa 1 lượng data cực kỳ lớn, quan trọng và phải luôn sẵn sàng nên hệ thống máy chủ này có hệ thống chống sét, động đất, được bảo vệ nghiêm ngặt và bảo trì thường xuyên. Có hẳn bộ tiêu chí để đánh giá tiêu chuẩn cho 1 data center cơ
+Ở VN có vài ngàn phòng máy lạnh như v được vận hành bởi các nhà mạng như VNPT, Viettel,... Các tổ chức nhỏ cũng có các data center riêng chứ, VD server của lab ta đặt trên tầng 10 thư viện.
+
+-> Khi xuất hiện clouding: thực tế xuất hiện từ rất rất lâu nhưng đến 2005 mới có các tài liệu chính thức thực thi nó.
+Với cách thức trên, ta biết rằng mô hình truyền thống có nhiều hạn chế. VD khi muốn tạo 1 website, ta phải đặt website lên 1 máy chủ (hosting) tức là ta phải có 1 máy chủ có dung lượng lớn bao cả backend và frontend và hiệu suất cao, có thể k cần bảo vệ nghiêm ngặt như đã nói bên trên nhưng cũng phải bỏ ra 1 lượng chi phí lớn và tài nguyên dư thừa lớn nếu website k dùng hết. Tương tự với các data center lớn của các hãng lớn cũng v. Họ tạo ra 1 data center lớn nhưng chắc chắn k dùng hết và còn có các dịch vụ cho thuê không gian lưu trữ data.
+
+Cloud ra đời giúp khắc phục vấn đề này. Bản chất có 2 ý quan trọng:
+1) Cloud sẽ gom nhiều máy chủ lại với nhau và khi sử dụng, nó sẽ tập hợp các tài nguyên nhàn rỗi còn dư lại để phục vụ, điều này khi áp dụng với các data center lớn có thể đem lại nguồn tài nguyên gần như unlimited. VD google drive cho dung lượng lớn tới độ nó cho phép mỗi tk gg 15GB lận, cả thế giới dùng chưa chắc đã hết được bộ nhớ trong data center của nó. Nhưng nó vẫn làm 1 hình thức giống như là cho thuê dung lượng lưu trữ khi mua tk unlimited lưu trữ vô hạn.
+2) Công nghệ ảo hóa cho phép tạo ra máy ảo hoạt động như 1 máy tính với phần cứng của riêng nó. VD 1 máy chủ có thể tách thành nhiều máy chủ ảo cô lập với nhau và hệ thống tệp tách biệt nhau. 1 data center có thể trở thành 1 tổng thể các data center có thể phục vụ cho nhiều tổ chức hơn so với cách truyền thống, đương nhiên là tài nguyên vẫn được lấy từ vùng nhớ rỗi của các máy chủ. Các tổ chức có data center lớn có thể liên kết với nhau đặt ở nhiều nơi và sao lưu dịch vụ  trên nhiều máy (cùng 1 website) khiến dịch vụ của họ có tốc độ cao ở mọi nơi trên thế giới (giống CDN). Ngay cả khi 1 máy chủ lẻ gặp sự cố, các máy chủ đám mây vẫn luôn trực tuyến và sẵn sàng.
+Điều này thay thế cho pp truyền thống vì nếu ta chỉ là 1 tổ chức nhỏ mà tự tạo 1 server, vì lý do gì đó server sập thì dự án của ta cũng đi luôn. Dù v với các tổ chức liên quan đến vấn đề tiền bạc như trava, họ vẫn dùng 1 server riêng để tăng cường bảo mật và có khả năng custom cao, tự động bảo trì tốt nhưng do kp là cloud và k có sự sao lưu dữ liêu khắp nơi trên thế giới nên tốc độ truy cập có thể chậm ở những nơi xa. 
+Khi đã có máy chủ tài nguyên lớn, tốc độ cao, ta có thể dùng cho các dự án của ta. Bên cạnh vc lưu tài nguyên như ảnh, text,... ta có thể hosting website(heroku) hay lưu trữ database(VD: firebase) hay làm các thú phức tạp vì ta chẳng khác gì có 1 server online cho riêng ta luôn chứ kp chỉ là 1 bộ nhớ global nữa.
+
+=> Tức là điện toán đám mây cung máy chủ bộ nhớ lớn online thực chất kp là vô hạn nhé mà chỉ là do tận dụng tối ưu được không gian lưu trữ nên dung lượng cực kỳ lớn gần như vô hạn mà thôi. Điều này đồng nghĩa nó giúp tiết kiệm chi phí cho doanh nghiệp, và phía doanh nghiệp cũng k cần lo bảo trì này nọ mà chỉ cần sử dụng thôi. Với các tổ chức lớn, ta có 2 cách là: tự dùng máy chủ riêng và tự bảo mật cũng như bảo trì; thuê máy chủ cloud uy tín. Chứ cloud free VD heroku chỉ dùng cho app vớ vẩn thôi.
+
+Đừng hiểu lầm là cloud connect nhiều máy chủ do mọi người tình nguyện nhé mà nó là của 1 tổ chức cung cấp dịch vụ đám mây làm kg lưu trữ và có thu phí, họ thường cho dùng free với giới hạn nhất định mà thôi. Nó khác hoàn toàn tor network, nó là tập trung.
+
+-> Cloud computing làm giảm nhu cầu sử dụng phần cứng chuyên dụng.
+Giao diện của hệ thống đám mây là thứ cho người dùng sử dụng nó. VD: website gg drive hay website heroku chính là giao diện của ứng dụng cung hệ thống đám mây
+Từ đám mây để chỉ sự kết nối phức tạp của các máy chủ trong mạng internet lại với nhau. 
+Cloud computing phụ thuộc vào khả năng kết nối internet quốc tế nhưng k lo vì số lượng máy chủ của các hãng lớn đã phủ khắp thể giới rồi. Tuy nhiên, điện toán đám mây ở VN lại k được hoàn chỉnh vì các nhà quản lý máy chủ chưa tìm được tiếng nói chung để hợp tác thành 1 mạng lưới cloud computing trong nước cũng như k đủ tiềm lực để đặt nhiều máy chủ ở các nơi trên thế giới chưa kể cơ sở hạ tầng còn non, phải tuân theo bản quyền cũng như đứt cáp nhiều vl.
+Vd: khi thay máy mới, mọi thông tin như email, data đều được chuyển ngay lập tức sang vì nó được lưu trữ trên đám mây và chỉ k thể truy cập khi k có mạng thôi.
+
+-> Công nghệ ảo hóa có nhiều loại nhưng mục đích chính là cung cấp ứng dụng như 1 máy chủ riêng chạy trên 1 máy khác. Có thể mô phỏng cho 1 môi trường or OS riêng chạy như 1 chương trình mà đáng ra máy gốc k hỗ trợ.
+
+-> Các cách triển khai mô hình dịch vụ:
+Public cloud: 1 bên cung cấp và bất cứ ai có thể dùng, nhà cung cấp tạo ra máy ảo và tài nguyên có sẵn cho comminity. Có thể trả phí or free. VD: gg drive, gmail
+Private cloud: đám mây nội bộ dùng trong mạng nội bộ của doanh nghiệp được bảo vệ sau tường lửa. Công ty tự tạo cloud cho riêng họ rất phù hợp khi họ đã có sẵn cơ sở hạ tầng tốt. Họ cũng có thể thuê bên ngoài cung cấp private cloud cho riêng mình
+Hybrid cloud: kết hợp đám mây riêng và đám mây công cộng, kết nối để dùng được giữa 2 loại. Thuận tiện hơn VD lưu mọi thứ trên private cloud chỉ nội bộ có, nhưng muốn public vẫn được kiểu phân quyền
+Multicloud: MultiCloud tượng trưng cho mô hình đăng ký nhiều dịch vụ đám mây cùng lúc, trong khi hybrid cloud tương ứng với nhiều chế độ triển khai (công khai, riêng tư hoặc kế thừa) cho cùng một bộ dịch vụ. Nó thg áp dụng cho nhiều môi trường, từ nhiều nhà cung cấp đám mây
+
+
+
+# Infrastructure as a Service(IaaS)
+Tầng dưới cùng, cung cấp cơ sở hạ tầng đám mây ảo hóa. Nhà cung cấp quản lý cơ sở hạ tầng, không gian lưu trữ trong trung tâm dữ liệu còn người dùng tựu tùy chỉnh các tài nguyên ảo hóa. Họ có thể mua cài đặt bất cứ phần mềm nào họ cần dùng, trả tiền cho vùng tài nguyên họ dùng.
+VD: Microsoft Azure, AWS
+
+
+
+# Platform as a Service(PaaS)
+IaaS cung cấp công cụ và giao toàn quyền cho khách hàng. Nhưng PaaS cung thêm các công cụ cần thiết để thử nghiệm, deploy, manage, update các sản phẩm. Nó lo các phần mềm trung gian, hệ điều hành,... các thú cần thiết để tạo phần mềm và chạy phần mềm.
+VD: Heroku, Microsoft Azure
+
+=> Khi hosting trên các nền tảng đám mây, nó cung cho ta 1 máy chủ ảo riêng và cho phép dùng terminal của nó trên hđh để làm đủ mọi thứ như 1 máy tính server thực. Bộ nhớ lớn, luôn available, ta có thể cài các ứng dụng tùy ý đủ để chạy phần mềm ta dùng trong server dó.
+
+
+
+# SaaS(Software as a service)
+Dịch vụ được sử dụng nh nhất vì nó đã tối ưu gần như hoàn toàn các yêu cầu người dùng cuối. Nhà cung cấp SaaS làm tất cả mọi thứ, chỉ cần vào và sử dụng ứng dụng. Quy mô mở rộng lớn và nhanh. Nhà cung cấp sở hữu ứng dụng và cung cấp cho khách hàng qua internet.
+VD: Google Apps, Salesforce, Microsoft Office 365
+
+
+
+# Function as a Service(FaaS):
+Chia nhỏ các ứng dụng đám mây và chỉ chạy khi cần thiết. Nó gọi là serverless vì k chạy trên các máy chủ chuyên dụng. Ta có thể triển khai ứng dụng mà k cần chuẩn bị trước tài nguyên. 
+VD bth nó triển khai ứng dụng ta sẽ được cung 1 lượng bộ nhớ cloud nhưng cái này ta chỉ cần khai báo cho nền tảng biết cách cung cấp tài nguyên khi ứng dụng được thực thi, cơ sở hạ tầng tự động thay đổi. 
+VD: thuê phòng thì người thuê chỉ trả tiền cho phòng ăn vào giờ ăn tối, phòng ngủ khi họ đang ngủ, phòng khách khi họ đang xem TV và khi họ không sử dụng các phòng đó, họ không phải trả tiền thuê phòng. Ứng dụng chạy và sử dụng tài nguyên cũng như v.
+VD: AWS Lambdas, Azure Functions.
+
+

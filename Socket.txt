@@ -1,0 +1,39 @@
+# Socket
+2 máy dùng socket liên kết với nhau thì 2 endpoints của liên kết là 2 socket. 
+Socket = IP + port với port là 16bits max 65535
+Trong OSI 7 tầng: TCP UDP nằm ở tầng transport, bên trên nó là session layer là nơi socket hoạt động
+Trong TCP IP 4 tầng: TCP UDP vẫn nằm ở transport layer, Socket nằm ở application layer vì nó là hợp của 3 tầng đầu của OSI luôn
+
+Có nhiều mô hình kết nối khác nhau như nhiều client kêt nối socket với 1 server hay chúng kết nối trực tiếp với nhau tùy.
+
+-> Cơ chế connect:
+VD: Biết giao thức SMTP giao tiếp qua cổng 25
+Client dùng (IP1, 5000) để connect tới server (IP2, 80) để lấy về giao diện web ứng dụng mail
+Server xác thực client thành công, client mở port 25 sẵn sàng chờ IP2 (chỉ mở chứ k gửi request)
+Khi có email tới, server check (IP1, 25) còn sống thì gửi vào đó.
+=> Bất cứ khi nào có mail tới server, nó cứ check (IP1, 25) sống thì gửi vào mà thôi nên khá real time
+
+-> Cơ chế duy trì kết nối:
+Client và server đều mở port 25 kết nối với nhau và kết nối k đóng cho đến khi 1 bên chủ động đóng nó bằng cách gửi gói tin tên là RST. Còn TH 1 bên ngắt đột ngột mà k gửi RST thì kết nối tự đóng sau 1 khoảng timeout quy định trong qtr Keep-Alive mà thôi
+
+--> Cơ chế Keep-Alive:
+tcp_keepalive_time: Khoảng thời gian không có tín hiệu. Mặc định là 7200s.
+tcp_keepalive_intvl: Khoảng thời gian chờ chiều bên kia hồi đáp. Mặc định là 75s.
+tcp_keppalive_probles: Số lần sẽ thử lại nếu việc giao tiếp gặp lỗi. Mặc định là 9.
+
+Client mở kết nối TCP -> sau tcp_keepalive_time nếu server im lặng thì gửi cờ ACK đến server và chờ hồi đáp (ACK kích thước nhỏ có thể k được xem là 1 package) 
+ -> Server nếu hồi đáp đúng thì tiếp tục tương tác bth 
+ -> Server hồi đáp sai thì coi là chưa hồi đáp và tiếp tục chờ
+ -> Server éo hồi đáp sau 1 khoảng tcp_keepalive_intvl -> client check số lần thử vượt quá tcp_keppalive_probles chưa để gửi lại ACK lặp lại -> nếu vượt quá thì gửi RST đến server r tự ngắt connect luôn
+=> Socket sẽ mở ít nhất là sau: tcp_keepalive_time + tcp_keepalive_intvl * tcp_keepalive_probes = 7200 + 75 * 9 (giây) = 2h11p nếu k nhận được hồi đáp sẽ đóng lại
+=> 3 thuộc tính này chỉ là mặc định và có thể tùy chỉnh VD dùng amazon cho phép custom AWS
+
+
+
+# 2 loại socket
+-> Stream socket dựa trên TCP:
+-> Datagram socket dựa trên UDP
+=> Dùng loại nào tương tự như cơ chế phân biệt TCP và UDP. VD socket UDP thg dùng cho game, chat chẳng hạn
+
+
+

@@ -42,6 +42,16 @@ Cho phép user connect vào internet bằng POTS truyền thống or đường d
 
 
 
+# Các mô hình web stack
+MEAN: MongoDB, ExpressJS, AngularJS, NodeJS
+MERN: MongoDB, Express, React, NodeJS
+JAM: JS, API, Markup
+WAMP: Windows, Apache, MySQL, PHP => kbh dùng
+LAMP: Linux, Apache, MySQL, PHP => kbh dùng
+
+
+
+# Socket
 # Clean code
 # Computer
 # Nghành data analysis

@@ -104,4 +104,5 @@ Ngôn ngữ module C, Lập trình hướng đối tượng(Java), Cơ sở dữ
 
 -> Liệu có code được 1 đoạn mã call api từ remote server bằng C thuần hay dựng 1 web server với nó, k dùng thư viện. Điều này là có thể, bên trong hệ điều hành luôn có module built-in giúp thao tác với network. Nếu lúc nào cũng dựa vào thư viện thì làm sao máy tính connect được với wifi hay lấy các thông số với thời gian cũng như chạy lệnh ping chẳng hạn. Các package hay thư viện http ta sử dụng ở tầng thấp nhất của nó chính là dùng các module built-in của hệ điều hành mà thôi. Do đó trong C nếu có thể thao tác với phần cứng thì có thể trigger các module này để thao tác với network.
 
+-> Fintech: là finance và technology, công nghệ tài chính. Là việc sáng tạo công nghệ ứng dụng trong các dịch vụ tài chính. Từ này xuất hiện khi IT dần xâm lấn vào các hệ thống tiền tệ.
 

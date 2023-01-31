@@ -96,6 +96,11 @@ series: https://www.youtube.com/watch?v=twuhocLtGCg&list=PLyb_C2HpOQSCAi67ZF0w-6
 
 
 
+# Monorepo
+
+
+
+
 # Other:
 -> Thứ tự dạy học trong trường: 
 Ngôn ngữ module C, Lập trình hướng đối tượng(Java), Cơ sở dữ liệu SQL, Ứng dụng desktop như C# .NET Winform ASP.NET, Start UML như Usecase cho ứng dụng / Class diagram cho hướng đối tượng / ER và activity diagram vẽ database, bắt gói tin học về mạng (dùng tool wireshark, Fiddler) => k tự học các thứ khác thì bốc cức

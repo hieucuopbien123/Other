@@ -96,8 +96,8 @@ series: https://www.youtube.com/watch?v=twuhocLtGCg&list=PLyb_C2HpOQSCAi67ZF0w-6
 
 
 
-# Monorepo
-
+# Bảo mật ứng dụng desktop
+=> ref tới "Java_OOP_SE / SE / Project EcoBike JavaFx"
 
 
 

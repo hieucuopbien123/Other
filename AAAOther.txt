@@ -106,6 +106,29 @@ Tool bắt gói tin mà máy gửi đi, có thể biết mọi thông tin reques
 
 
 
+# Web programming
+->WWW or W3 được phát triển bởi Tim Berners-Lee năm 1989
+
+XHTML: Extensible HTML
+
+-> Tiêu chuẩn đặt URI là từ RFC 3986: 
+http://www.google.com/search?q=test#prs
+scheme authority      path   query  fragment
+
+-> IP address
+1.1.1.1: IP address của cloud flare. Nó là ip của 1 public DNS resolver của công ty Cloudflare. Nó cung dịch vụ DNS nhanh và an toàn để tăng tốc độ truy cập mạng. Resolver đó là 1 program or 1 server thực hiện convert human-readble ip thành dạng số mà máy tính hiểu
+8.8.8.8: là ip address của 1 trong các public DNS server của google.
+=> URI hay DNS đều do các tổ chức lớn trên thế giới đặt ra mà ta phải tuân theo
+
+IP address ta thấy được trong lệnh ipconfig là private IP address mà các máy trong cùng mạng có thể dùng nó để tương tác với ta. IP address ta thấy trong trang https://whatismyipaddress.com/ là public IP address mà máy dùng để tương tác với các máy bên ngoài, tùy vào config mà nó bị thay đổi. 
+Điều này k liên quan đến static ip address và dynamic ip address. Static là gán thủ công và cố định. Dynamic là gán động từ pool thông qua giao thức DHCP 1 cách tự động
+
+-> Mở setting wifi cũng chỉ ra private ip address
+Để xem public ip address trên máy ta phải cho nó đi qua resolver bằng lệnh chạy:
+nslookup myip.opendns.com resolver1.opendns.com
+
+
+
 # Other:
 -> Thứ tự dạy học trong trường: 
 Ngôn ngữ module C, Lập trình hướng đối tượng(Java), Cơ sở dữ liệu SQL, Ứng dụng desktop như C# .NET Winform ASP.NET, Start UML như Usecase cho ứng dụng / Class diagram cho hướng đối tượng / ER và activity diagram vẽ database, bắt gói tin học về mạng (dùng tool wireshark, Fiddler) => k tự học các thứ khác thì bốc cức

@@ -16,6 +16,9 @@ Vd: link cuốn sách Clean Code trên mạng bằng URL là: https://www.amazon
 link cuốn đó bằng URN là: urn:isbn:0132350882
 Cấu trúc: URN:NID:NSS với URN là URN luôn để báo hiệu đây là 1 URN; NID là namespace do IANA cấp ví dụ ISBN là namespace mã số sách quốc tế(có rất nhiều namespace khác); NSS là chuỗi xác định duy nhất đối tượng cụ thể
 
+--> URN có thể coi là 1 định danh duy nhất của thực thể, còn URL cung cấp địa chỉ để tìm ra thực thể đó
+URL là 1 dạng URI
+
 -> Phân biệt: ISBN(International Standard Book Number) là mã số chuẩn quốc tế xác định 1 quyển sách; ISSN(International Standard Serial Number) là mã số chuẩn quốc tế cho xuất bản. 
 Để tìm 1 quyển sách bằng ISBN nó k hề ez. Mỗi quốc gia có một cơ quan ISBN riêng, phải truy cập dữ liệu lưu chiểu của quốc gia đó mới tra được thông tin cuốn sách. Ta k đi sâu vào vc tìm bằng URN là gì vì ta chỉ thao tác với URL. 
 

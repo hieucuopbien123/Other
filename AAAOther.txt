@@ -129,6 +129,11 @@ nslookup myip.opendns.com resolver1.opendns.com
 
 
 
+# AI tool
+-> ref tới ảnh "Tổng hợp AI Tool"
+
+
+
 # Other:
 -> Thứ tự dạy học trong trường: 
 Ngôn ngữ module C, Lập trình hướng đối tượng(Java), Cơ sở dữ liệu SQL, Ứng dụng desktop như C# .NET Winform ASP.NET, Start UML như Usecase cho ứng dụng / Class diagram cho hướng đối tượng / ER và activity diagram vẽ database, bắt gói tin học về mạng (dùng tool wireshark, Fiddler) => k tự học các thứ khác thì bốc cức

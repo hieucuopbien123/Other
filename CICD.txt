@@ -1,0 +1,44 @@
+CI/CD
+
+-> Giải pháp để liên tục build, test, merge, deploy tự động. CI/CD pipeline liên tục qua từng bước, VD nếu bước build fail sẽ k thể thực hiện sang bước tiếp theo và ứng dụng vẫn ở phiên bản thành công cuối cùng trước đó.
+
+CI là continuous integration tức code thay đổi thì tự động build, test và merge vào shared repo. CD là continuous delivery (deploy sang bản non-production) hoặc hiểu là continuous deployment (deploy sang bản production)
+Nhiều công ty áp dụng CI/CD cho developer deploy sang các nhanh dev, sau đó admin là người duy nhất có quyền merge vào nhánh master để tự động deploy sản phẩm ở dạng dùng thử non-production or staging environment(bản test cho qa). Sau khoảng vài tháng mới chốt release nó thành version production mới.
+
+-> Dùng Github Actions:
+Ta hiểu github actions giúp tự động hóa hàng loạt các tác vụ khi sự kiện xảy ra, VD khi push code lên thì thực hiện lần lượt các hành động nào theo pipeline
+
+Ta có thể tự host trên server riêng or cloud nào đó rồi dùng github actions tự động hóa việc chạy các lệnh để deploy. 
+Trước h ta từng dùng firebase hosting or vercel hosting kết hợp với github actions để tự động: push code lên -> github actions sẽ build và deploy -> thành công thì host lên firebase hay vercel tự động.
+Nhưng firebase hay vercel đều support github actions đến tận răng, tự động sinh workflow mặc định ta k cần làm gì. Nếu ta muốn thực hiện các câu lệnh phức tạp trên các nền tảng khác sẽ phải tự code workflow, push lên thì chạy từng dòng lệnh nào phải ghi ra.
+
+- Event là các sự kiện trên repo, VD khi push code lên, khi tạo issue, tạo pull request. 
+Ta có thể trigger workflow chạy theo schedule thủ công or post API để chạy.
+
+- Worflow là tập hợp các jobs được thực hiện theo thứ tự pipeline khi sự kiện xảy ra
+Github Actions cung linux, window, macos virtual machine để chạy workflow. 
+
+Workflow xđ trong folder .github/workflows, định nghĩa bởi file yaml. 1 repo có thể có nhiều workflow làm nh task khác nhau.
+
+- Jobs: có thể là 1 script do ta viết or 1 action.
+Mỗi job được chạy trong 1 virual machine runner or 1 container riêng.
+Event -> Runner1[Job1[run action -> run script -> run action]] -> Runner2[Job2[run action -> run script]]
+
+Default các job sẽ run parallel, ta có thể setup run tuần tự. 
+
+- Actions: các hành động cài đặt lặp đi lặp lại có thể dùng actions có sẵn
+1 actions có thể pull code từ git hay setup các tool chain lớn. Trên marketplace có sẵn các actions như setup java jdk, setup .net core sdk, setup go evironment,...
+
+- Runner là 1 server máy ảo chạy cái workflow, có sẵn đủ linux, window, macos. Nếu ta cần các điều kiện phần cứng phức tạp có thể host riêng 1 runner
+1 runner chỉ chạy được 1 job 1 lúc.
+
+-> Ta có thể tạo workflow dùng github actions bất cứ lúc nào bằng cách tạo file .yaml đặt trong .github/workflows
+Khi có workflow, github actions sẽ check code được pushed và cài BATS(Bash Automated Testing System) testing framework rồi chạy command hiển thị version: bats -v
+
+-> Digital Ocean
+
+//!!!!!!!
+Slide 39
+
+
+

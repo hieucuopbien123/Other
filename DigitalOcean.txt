@@ -1,0 +1,8 @@
+Digital Ocean
+
+-> Là 1 nhà cung cấp dịch vụ đám mây, có đầy đủ mọi thứ.
+
+Nó có computing engine cho phép chọn đủ loại hệ điều hành, dùng kubernetes tích hợp sẵn, chọn cấu hình RAM CPU cho phần cứng. Kubernetes tích hợp sẵn đầy đủ tính năng có thể dùng luôn.
+Tất cả đều thao tác đơn giản trên giao diện web, đăng ký là có
+
+

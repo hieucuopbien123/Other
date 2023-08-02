@@ -1,6 +1,7 @@
 Các kiến thức khác:
 
 
+
 # Phân biệt công ty Outsource và Product:
 Công ty Outsourcing nhận dự án làm và bàn giao sản phẩm. Còn công ty Product làm sản phẩm cho chính họ.
 VD: Công ty A thuê 1 bên công ty outsourcing code cho 1 tính năng mới của họ; Công ty B là 1 công ty Product vì họ có dev tự code tính năng của chính họ. VD công ty Momo có 1 đội dev từng chức năng cho cái ví thì Momo là công ty product
@@ -62,6 +63,7 @@ LAMP: Linux, Apache, MySQL, PHP => kbh dùng
 # License open-source software
 # RFC
 # URI URN URL
+# CICD
 
 # Window
 -> Boot
@@ -107,7 +109,7 @@ Tool bắt gói tin mà máy gửi đi, có thể biết mọi thông tin reques
 
 
 # Web programming
-->WWW or W3 được phát triển bởi Tim Berners-Lee năm 1989
+-> WWW or W3 được phát triển bởi Tim Berners-Lee năm 1989
 
 XHTML: Extensible HTML
 
@@ -132,6 +134,36 @@ nslookup myip.opendns.com resolver1.opendns.com
 # AI tool
 -> ref tới ảnh "Tổng hợp AI Tool"
 
+-> Tabnine => extension autocomplete code
+
+-> Fig.io: tool autocomplete terminal. Dùng bản AI của fig.io phải trả phí
+
+Command: 
+fig => hiển thị các tính năng của fig
+fig <tên lệnh> => hiển thị cú pháp lệnh. Nó có hầu hết mọi lệnh thông dụng
+
+
+
+# Streaming server
+Ngoài server socket hay server http bth, ta còn có streaming server là 1 loại server cung các continuous data như video, audio. 
+Khi xem video từ youtube, ta k tương tác với server http mà tương tác với 1 streaming server. Nó load video từ từ và gửi cho client trong khi duy trì connection chứ k load 1 phát tất cả. Khi nhúng video thg ta k cần xử lý thủ công phần đó.
+
+-> Cách biến gg drive thành streaming server phim
+Các web làm phim phải bỏ ra lượng tiền lớn để thuê streaming server cho video. Ta có thể tận dụng gg drive làm streaming server lưu phim.
+
+Đầu tiên khi mở 1 video trong gg drive, nó gửi request https://drive.google.com/get_video_info?docid=<...>&drive_originator_app=<...> với từng video. Mỗi video có 1 id riêng. Sau khi tải vid lên ta chỉ cần lấy id đó là được
+Thực tế có nhiều đường link để get_video_info: VD https://mail.google.com/e/get_video_info  và  https://drive.google.com/e/get_video_info  và  https://docs.google.com/e/get_video_info
+Nhận kết quả trả về cho vào nodejs thư viện query-string để parse data lấy ra trường fmt_stream_map. Trường này định nghĩa ra các url tương ứng với chất lượng video khác nhau. VD 18 là MP4 360p, 22 là MP4 720p.
+Mở url lên là xem được phim. Nếu mở local ở máy ta sau khi đã đăng nhập thì được nhưng mở ở máy người khác thì không:
+- Để qua mặt check ip của gg: Ta phải lấy 2 đường link ipv4 và ipv6, check khi người dùng xài IPv4 thì đưa link ipv6 và ngược lại vì gg drive k check ip khi type khác nhau.
+- Tuy nhiên để link đó hoạt động thì cần có cookie trường DRIVE_STREAM khi truy cập url. Thậm chi có thể phải redirect qua nhiều url thì mới có được link chạy được luôn, ở mỗi url redirect lại phải thêm cookie vào.
+
+=> Chính vì cookie nên hiện tại k thể dùng gg drive làm streaming server được nữa. Thực tế ta vẫn có thể làm bằng puppeter kiểu: client gửi request video tới server -> server search database ra id -> get_video_info lấy url -> dùng puppetter truy cập gg drive của ta để lấy cookie -> server dùng cookie liên tục truy cập streaming server, để kệ nó redirect tới page cuối cùng thì lấy ra url cuối -> gửi lại url đó và cookie cho client -> client xem được video
+=> Cx vì id của video nên các hãng thấy phim lậu có thể report dựa vào id đó để gg drive chặn lại.  
+
+-> Để thêm Cookie vào request, ta thêm vào headers. VD thêm 2 trường vào cookie thì headers sẽ là:
+Cookie: Key1=Value1;Key2=Value2
+
 
 
 # Other:
@@ -143,4 +175,12 @@ Ngôn ngữ module C, Lập trình hướng đối tượng(Java), Cơ sở dữ
 -> Liệu có code được 1 đoạn mã call api từ remote server bằng C thuần hay dựng 1 web server với nó, k dùng thư viện. Điều này là có thể, bên trong hệ điều hành luôn có module built-in giúp thao tác với network. Nếu lúc nào cũng dựa vào thư viện thì làm sao máy tính connect được với wifi hay lấy các thông số với thời gian cũng như chạy lệnh ping chẳng hạn. Các package hay thư viện http ta sử dụng ở tầng thấp nhất của nó chính là dùng các module built-in của hệ điều hành mà thôi. Do đó trong C nếu có thể thao tác với phần cứng thì có thể trigger các module này để thao tác với network.
 
 -> Fintech: là finance và technology, công nghệ tài chính. Là việc sáng tạo công nghệ ứng dụng trong các dịch vụ tài chính. Từ này xuất hiện khi IT dần xâm lấn vào các hệ thống tiền tệ.
+
+-> Các trang git đặc biệt:
+https://github.com/kamranahmedse/developer-roadmap => Tổng hợp roadmap cần để học bất cứ thứ gì mới, gồm Docker, mongodb, golang, devops, fullstack,..
+https://github.com/public-apis/public-apis => Tổng hợp api của mọi lĩnh vực từ con vật, đời sống, crypto cũng có
+https://github.com/donnemartin/system-design-primer => Tổng hợp kiến trúc của các hệ thống lớn trong thực tế, có cả amazon, google hay các system design phức tạp
+
+-> URL tổng hợp phím tắt của VSC: https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf
+
 

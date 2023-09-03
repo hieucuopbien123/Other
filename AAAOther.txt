@@ -183,4 +183,8 @@ https://github.com/donnemartin/system-design-primer => Tổng hợp kiến trúc
 
 -> URL tổng hợp phím tắt của VSC: https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf
 
+-> So sánh về memory giữa các ngôn ngữ (k xét về tốc độ chạy task):
+Rust tokio vẫn là ngôn ngữ tốn ít memory nhất so với mọi ngôn ngữ khác
+NodeJS tốn ít memory hơn C# khi có 100 ngàn task đồng thời nhưng khi lên mức quá nhiều là 1 triệu task thì C# bắt đầu tốn ít hơn NodeJS. 
+Go thì tốn memory ít khi chạy ít task nhưng số lượng task đồng thời tăng nhanh sẽ khiến nó tốn lượng memory tăng vọt. Python cũng vậy.
 

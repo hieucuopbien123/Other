@@ -32,6 +32,8 @@ VD: WordPress, Youtube, Wikipedia hay Facebook dùng PHP. Các website sinh ra t
 Do chạy trên server nên cần 1 server ảo để biên dịch lệnh, có nhiều phần mềm như XAMPP, Vertigo giúp tạo server ảo. VD: Vertigo giúp tạo server ảo biên dịch mã PHP, quản lý MySQL, cấu hình domain ảo ip các thứ.
 --> Laravel là 1 framework của PHP làm web phổ biến nhất theo mẫu MVC, mã nguồn mở, free. Code được giảm thiểu nhưng vẫn đạt tiêu chuẩn giúp tiết kiệm tg. Nói đến PHP thg nói đến kèm với Laravel.
 
+-> Angular, Vue: Các framework JS sau này chỉ học nếu thực sự có nhu cầu công ty yêu cầu dùng
 
+-> Python: thường dùng cho AI, k học.
 
 

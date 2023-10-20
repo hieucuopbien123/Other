@@ -63,7 +63,6 @@ LAMP: Linux, Apache, MySQL, PHP => kbh dùng
 # License open-source software
 # RFC
 # URI URN URL
-# CICD
 
 # Window
 -> Boot
@@ -93,7 +92,7 @@ Là mô hình phần mềm, 1 ứng dụng khổng lồ chia ra thành càng nhi
 
 
 # Các series hay nhưng k thực tiễn
--> Discovering hidden API: là hướng dẫ tìm ra các API ẩn trong website, có thể dùng nó để hack mở khóa các page ẩn thông tin hay trả phí để xem thông tin
+-> Discovering hidden API: là hướng dẫn tìm ra các API ẩn trong website, có thể dùng nó để hack mở khóa các page ẩn thông tin hay trả phí để xem thông tin
 series: https://www.youtube.com/watch?v=twuhocLtGCg&list=PLyb_C2HpOQSCAi67ZF0w-6CvCvZs_OXAB&index=1
 
 
@@ -166,6 +165,20 @@ Cookie: Key1=Value1;Key2=Value2
 
 
 
+# Tính năng của VSC
+-> Forwarding port:
+Mục ports cạnh terminal, hoặc gõ npx serve sẽ xuất hiện
+Login vào github, nó tận dùng DevTunnel để forwarding port local ra ngoài internet nhanh
+=> Thay thế ngrok
+
+-> Cách search trong node_modules bằng VSC
+Vào user settings tìm search exclude: xóa **/node_modules đi
+
+Nếu chỉ tìm node_modules theo tên file thì nên dùng extension Find in node_modules
+
+
+
+
 # Other:
 -> Thứ tự dạy học trong trường: 
 Ngôn ngữ module C, Lập trình hướng đối tượng(Java), Cơ sở dữ liệu SQL, Ứng dụng desktop như C# .NET Winform ASP.NET, Start UML như Usecase cho ứng dụng / Class diagram cho hướng đối tượng / ER và activity diagram vẽ database, bắt gói tin học về mạng (dùng tool wireshark, Fiddler) => k tự học các thứ khác thì bốc cức
@@ -187,4 +200,7 @@ https://github.com/donnemartin/system-design-primer => Tổng hợp kiến trúc
 Rust tokio vẫn là ngôn ngữ tốn ít memory nhất so với mọi ngôn ngữ khác
 NodeJS tốn ít memory hơn C# khi có 100 ngàn task đồng thời nhưng khi lên mức quá nhiều là 1 triệu task thì C# bắt đầu tốn ít hơn NodeJS. 
 Go thì tốn memory ít khi chạy ít task nhưng số lượng task đồng thời tăng nhanh sẽ khiến nó tốn lượng memory tăng vọt. Python cũng vậy.
+
+-> SDK là toàn bộ công cụ, API là cái bên trong mà dev sử dụng
+
 

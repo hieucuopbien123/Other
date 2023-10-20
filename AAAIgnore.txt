@@ -36,4 +36,24 @@ Do chạy trên server nên cần 1 server ảo để biên dịch lệnh, có n
 
 -> Python: thường dùng cho AI, k học.
 
+-> Htmx: 1 thư viện thay đổi cách code frontend nhưng điểm lợi lại k nhiều nên chắc éo bh dùng
+Ta có thể thêm các thuộc tính ngay trong tag htmx thực hiện actions mà k cần code JS luôn. Kích thước nhẹ hơn React.
+Htmx k chia component như React nên khó khăn trong việc tái sử dụng
+Htmx ban đầu cũng là SSR gửi đến trình duyệt, rồi nó dùng CSR để thay đổi html bằng JS được tích hợp ngay trong tag. Nó k cần quản lý tạng thái các thứ, k cần dùng webpack
+
+-> Turso: database nosql có thể xử lý lượng lớn data hiệu quả, dễ mở rộng
+Tính năng của nó là database được lưu ở edge, phân tán, dựa trên libSQL (1 nhánh mã nguồn mở của SQLite). 
+Nó được thiết kế để giảm trễ cho truy vấn từ bất kỳ nơi nào trên thế giới. Đó gọi là các edge functions được cung cấp bởi các nền tảng đám mây như Vercel, CloudFlare bằng cách lấy data ở gần hơn về mặt địa lý.
+Nó chỉ hỗ trợ các kiểu cơ bản như số chuỗi, ngày tháng, blob
+
+Cơ chế hoạt động giống như Edge computing là 1 mô hình tính toán phân tán cho phép các thiết bị ở xa xử lý dữ liệu gần với nơi dữ liệu được tạo ra. Nó là 1 từ chung nhưng mô hình này có thể kết hợp với các nền tảng đám mây để triển khai các ứng dụng ở cạnh (edge) mạng.
+
+-> Phaser: Là 1 framework HTML5 để làm game trên web. Nó dùng Pixi.js render trên WebGL và Canvas. Hỗ trợ cả mobile và desktop. 
+Điều đb là game phát triển bởi Phaser có thể dễ dạng biên thành ứng dụng cho iOS và Android.
+Code rất dễ với JS nhưng ta k làm game nên bỏ
+
+-> Ionic Framework: 1 framework phát triển ứng dụng mobile đa nền tảng. Giống React Native
+
+-> WebGPU: 1 phiên bản mới hoàn hảo hơn kế thừa từ WebGL. Mạnh hơn, nhanh hơn và tốt hơn.
+
 

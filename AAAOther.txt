@@ -179,6 +179,22 @@ Nếu chỉ tìm node_modules theo tên file thì nên dùng extension Find in n
 
 
 
+# Học bằng ánh xạ
+-> 1 tool thao tác DB mới chỉ cần biết tối thiểu các kỹ thuật:
+Cách connect vào DB. Mỗi query là 1 connection hay connect 1 lần và dùng mọi lúc. Có thể dùng connectionPool không. Xử lý số lần reconnectionTries và reconnectInterval, lấy trạng thái connection hiện tại. Setup debug thông tin db nếu có. Cách setup khi connect nhiều hơn 1 database
+Cách query get, update db cơ bản theo pattern tốt nhất. Cách dùng generic nếu có khi nhiều db có các hàm như nhau (getbyid, getall, deletebyid, updatebyid,...). Lấy 1 giá trị hay lấy 1 object hay lấy 1 list object có khác nhau. Parameterized chống sql injection. 
+Cách thực hiện transaction, gom nhiều update vào 1 transaction, cách rollback khi lỗi. Các hàm atomic có sẵn
+Dùng lazy query tới DB bằng tool đó.
+Các kỹ năng nâng cao hơn: Cách update database kiểu migration, alter table như bỏ 1 trường hay thêm 1 trường mới mà vẫn migrate đủ data cũ, update theo version k bị update trùng version cũ; đánh index; cascade delete, cascade update; replica database và đồng bộ giữa các db; Backup database
+
+-> 1 ngôn ngữ mới: Ánh xạ như JS, C# nhanh
+
+-> 1 server:
+//!!!!!!!
+Tương tự 1 framework frontend, message queue với các cái đã biết
+
+
+
 # Other:
 -> Thứ tự dạy học trong trường: 
 Ngôn ngữ module C, Lập trình hướng đối tượng(Java), Cơ sở dữ liệu SQL, Ứng dụng desktop như C# .NET Winform ASP.NET, Start UML như Usecase cho ứng dụng / Class diagram cho hướng đối tượng / ER và activity diagram vẽ database, bắt gói tin học về mạng (dùng tool wireshark, Fiddler) => k tự học các thứ khác thì bốc cức
@@ -202,5 +218,7 @@ NodeJS tốn ít memory hơn C# khi có 100 ngàn task đồng thời nhưng khi
 Go thì tốn memory ít khi chạy ít task nhưng số lượng task đồng thời tăng nhanh sẽ khiến nó tốn lượng memory tăng vọt. Python cũng vậy.
 
 -> SDK là toàn bộ công cụ, API là cái bên trong mà dev sử dụng
+
+-> Prompt engineer là 1 từ chỉ nghề của những người tối ưu hóa input cho AI chạy để có đầu ra tốt hơn
 
 

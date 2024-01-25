@@ -56,4 +56,3 @@ Code rất dễ với JS nhưng ta k làm game nên bỏ
 
 -> WebGPU: 1 phiên bản mới hoàn hảo hơn kế thừa từ WebGL. Mạnh hơn, nhanh hơn và tốt hơn.
 
-

@@ -1,4 +1,5 @@
 # Clean Code:
+- Đặt tên cho 1 hàm phải nói được tất cả nhưng gì nó làm. Nếu 1 hàm làm quá nhiều nv làm tên quá dài thì code chưa clean, cần tách ra nhiều hàm để chia nhiệm vụ ra và hàm này đặt thành 1 tên chung nhưng vẫn phải đủ specific mà sẽ k lẫn với bất cứ hàm nào ở file khác
 
 ﻿-Đặt tên theo mục đích sử dụng
 -Các phần tử chia nhỏ có thể thêm vào thành 1 class vì sau này có thể sử dụng hàng tá chức năng lq tới nó

@@ -56,3 +56,10 @@ Code rất dễ với JS nhưng ta k làm game nên bỏ
 
 -> WebGPU: 1 phiên bản mới hoàn hảo hơn kế thừa từ WebGL. Mạnh hơn, nhanh hơn và tốt hơn.
 
+-> tRPC: 1 thư viện API cực mạnh của JS giúp viết API, xây dựng web mà k cần REST API hay GraphQL. Nó cho phép tạo ra các hàm trên server và gọi trực tiếp từ client như thể chúng định nghĩa trên client. 
+Kết hợp với Typescript, nó typesafe và nếu ta đổi 1 trường trong API phía server thì client sẽ báo lỗi đúng dòng tương ứng. Nếu ta làm fullstack cho nó sẽ rất tuyệt vì tốc độ xây dựng nhanh, chứ bth server sửa 1 trường xong phải báo team client sửa theo sẽ rất mất tg.
+
+-> Coze, nền tảng tạo chat bot AI trên các MXH
+
+-> Deno giống với NodeJs là một runtime environment, nó cũng được phát triển dựa trên V8 engine của Javascript giống với Nodejs. Nó ra đời vì NodeJS có những hạn chế khó có thể thay đổi
+Deno không sử dụng npm mà dùng trực tiếp url. Làm việc với typescripts luôn. Dùng callback-based, không còn lo callback hell. Cấp quyền truy cập vào network các thứ thay vì gọi thoải mái như nodejs. Nói chung nó là tool mới chặt chẽ hơn, thích thì dùng.

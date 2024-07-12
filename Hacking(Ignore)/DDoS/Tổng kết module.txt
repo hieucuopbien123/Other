@@ -2,12 +2,13 @@ DDoS:
 
 
 # Basic
-DDoS(Denial-of-service attack) tấn công từ chối dịch vụ. Cơ sở hạ tầng k đủ mạnh để chống đỡ các cuộc tấn công DDoS, nếu ta có 1 trang web chạy trên hàng nghìn server với bằng thông TB/s(1 TB = 1 nghàn tỷ byte) thì k cần giải pháp chống DDoS làm gì nhưng ít có trang nào như v.
+DDoS(Denial-of-service attack) tấn công từ chối dịch vụ. Cơ sở hạ tầng k đủ mạnh để chống đỡ các cuộc tấn công DDoS. Nếu ta có 1 trang web chạy trên hàng nghìn server với bằng thông TB/s(1 TB = 1 nghìn tỷ byte) thì k cần giải pháp chống DDoS làm gì nhưng ít có trang nào như v.
+
+
 
 # Tấn công NTP 
 Tấn công NTP là 1 loại của DDoS
 NTP Flood(NTP Amplification) Network Time Protocol là 1 giao thức mạng lâu đời đồng bộ hóa thời gian giữa các hệ thống điện tử. Kiểu tấn công này sẽ khai thác lỗ hổng các máy chủ NTP có thể truy cập công khai để làm quá tải mạng đích với số lượng lớn các gói UDP.
 Giao thức này thiết kế ra để tránh ảnh hưởng đến độ trễ biến đổi bằng cách sử dụng bộ đệm fitter.
-jitter là sự biến động về độ trễ trên toàn mạng(tốc độ thay đổi về độ trễ đó), độ trễ là khoảng thời gian gửi từ điểm này đến điểm khác, nó kbh là lý tưởng(=0). Jitter nên thấp nhất có thể để sự trễ k bị biến động quá lớn. Độ trễ lớn cũng k ảnh hưởng lắm nếu jitter thấp. jitter khi truyền trên mạng nên dưới 30ms, tỉ lệ gói tin bị thất lạc mất ít hơn 1%, độ trễ mạng tổng thể dưới 150ms là chấp nhận đc. 
 
 

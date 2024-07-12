@@ -1,6 +1,4 @@
 # 2FA:
-
-
 -> Basic
 2FA(two-factor authentication) hay pp xác minh bảo mật 2 bước. Với các loại data quan trọng trong các ứng dụng bảo mật VD liên quan đến tiền bạc, họ có thể dùng 2FA. Người dùng khi vào tk bên cạnh vc nhập mật khẩu phải có thêm mã truy cập độc lập. Mã này có thể được gửi về email or lấy trong các ứng dụng authenticator khác.
 
@@ -8,8 +6,6 @@
 
 Ta cũng có thể dùng authenticator tích hợp thêm trong các ứng dụng ta làm ra để tăng tính bảo mật => chưa nghiên cứu
 1 vài ví blockchain hiện nay yêu cầu dùng 2FA cho các giao dịch tiền mã hóa để đảm bảo an toàn cho người dùng.
-
-
 
 -> Google authenticator
 Là ứng dụng authenticator phổ biến nhất. Vd ta có thể thiết lập nó với tk email thì email sẽ có xác thực 2 bước.

@@ -1,5 +1,4 @@
-Các kiến thức khác:
-
+***Các kiến thức khác:
 
 
 # Phân biệt công ty Outsource và Product:
@@ -31,6 +30,9 @@ SA: System administrator - quản trị viên hệ thống
 CTO: Chief technology officer - giám đốc công nghệ, là người quản lý cấp cao
 PM: Project manager - quản lý dự án
 
+BrSE(bridge system engineering) là kỹ sư cầu nối, kết nối team dev với khách hàng. Phải nắm được từ đầu tới đuôi dự án để ứng phó kịp thời. Họ liên hệ, phân tích yêu cầu, trực tiếp code, demo sản phẩm, báo cáo tiến độ, thương lượng. 
+PM bình thường là người phân chia, giám sát công việc từng người thì BrSE kiêm vai trò PM chỉ là giám sát chung dự án và báo cáo tiến độ cho khách mà thôi
+
 
 
 # MFA (Multi-factor authentication) 
@@ -52,40 +54,6 @@ LAMP: Linux, Apache, MySQL, PHP => kbh dùng
 
 
 
-# Socket
-# Clean code
-# Computer
-# Nghành data analysis
-# DevOps
-# Lập trình nhúng
-# Path trong ứng dụng
-# Lập trình game
-# License open-source software
-# RFC
-# URI URN URL
-
-# Window
--> Boot
--> Powershell
--> Sandbox
-
-# Qt/Concurrency
-# Qt/Hook
-# Qt/Multimedia
-# Qt/XML
-# Qt/Wifi
-# Qt/Winadmin
-# Qt/Static and dll lib
-# Qt/OpenSSL Doxygen
-# Qt/Mã hóa
-# Qt/TCP
-# Qt/Test
-# Qt/Window service
-# Qt/Zip
-# Qt/Encode và decode
-
-
-
 # Microservices
 Là mô hình phần mềm, 1 ứng dụng khổng lồ chia ra thành càng nhiều mô đun nhỏ càng tốt, thay vì làm nguyên khối. Các hãng lớn như netflix đều dùng kiểu này, các mô đun có thể được viết bằng nhiều ngôn ngữ khác nhau và tương tác thông qua API. Vì mỗi mô đun chỉ lo các tính năng riêng nhỏ nên code đơn giản, nhưng phải quản lý các microservice tương tác với nhau hợp lý tránh rắc rối.
 
@@ -94,16 +62,6 @@ Là mô hình phần mềm, 1 ứng dụng khổng lồ chia ra thành càng nhi
 # Các series hay nhưng k thực tiễn
 -> Discovering hidden API: là hướng dẫn tìm ra các API ẩn trong website, có thể dùng nó để hack mở khóa các page ẩn thông tin hay trả phí để xem thông tin
 series: https://www.youtube.com/watch?v=twuhocLtGCg&list=PLyb_C2HpOQSCAi67ZF0w-6CvCvZs_OXAB&index=1
-
-
-
-# Bảo mật ứng dụng desktop
-=> ref tới "Java_OOP_SE / SE / Project EcoBike JavaFx"
-
-
-
-# Fiddler
-Tool bắt gói tin mà máy gửi đi, có thể biết mọi thông tin request. VD debug powershell biết được nó gửi request gì đi mà việc dùng thông thường k thể thấy được
 
 
 
@@ -127,19 +85,6 @@ IP address ta thấy được trong lệnh ipconfig là private IP address mà c
 -> Mở setting wifi cũng chỉ ra private ip address
 Để xem public ip address trên máy ta phải cho nó đi qua resolver bằng lệnh chạy:
 nslookup myip.opendns.com resolver1.opendns.com
-
-
-
-# AI tool
--> ref tới ảnh "Tổng hợp AI Tool"
-
--> Tabnine => extension autocomplete code
-
--> Fig.io: tool autocomplete terminal. Dùng bản AI của fig.io phải trả phí
-
-Command: 
-fig => hiển thị các tính năng của fig
-fig <tên lệnh> => hiển thị cú pháp lệnh. Nó có hầu hết mọi lệnh thông dụng
 
 
 
@@ -176,6 +121,16 @@ Vào user settings tìm search exclude: xóa **/node_modules đi
 
 Nếu chỉ tìm node_modules theo tên file thì nên dùng extension Find in node_modules
 
+-> https://www.xda-developers.com/how-use-gpu-visual-studio-code/
+Dùng GPU cho VSC giúp tốc độ của VSC tăng cao đặc biệt khi liên quan đến các tác vụ render
+
+-> URL tổng hợp phím tắt của VSC: https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf
+
+-> 
+CTRL + T => search biến và hàm trong code
+CTRL + D => multiple select
+CTRL + SHIFT + L => multiple select all
+CTRL + B 
 
 
 
@@ -196,21 +151,11 @@ Tương tự 1 framework frontend, message queue với các cái đã biết
 
 
 # Other:
--> Thứ tự dạy học trong trường: 
-Ngôn ngữ module C, Lập trình hướng đối tượng(Java), Cơ sở dữ liệu SQL, Ứng dụng desktop như C# .NET Winform ASP.NET, Start UML như Usecase cho ứng dụng / Class diagram cho hướng đối tượng / ER và activity diagram vẽ database, bắt gói tin học về mạng (dùng tool wireshark, Fiddler) => k tự học các thứ khác thì bốc cức
-
 -> Web service nó như 1 loại riêng của API chỉ dùng cho web. Nó dùng giao thức http là phổ biến nhất và 3 chuẩn chính là SOAP, REST và XML-RPC làm phương tiện giao tiếp. API có thể dùng bất cứ phương tiện giao tiếp nào để bắt đầu tương tác giữa các ứng dụng. VD: các cuộc gọi hệ thống bởi kernel linux API.
 
 -> Liệu có code được 1 đoạn mã call api từ remote server bằng C thuần hay dựng 1 web server với nó, k dùng thư viện. Điều này là có thể, bên trong hệ điều hành luôn có module built-in giúp thao tác với network. Nếu lúc nào cũng dựa vào thư viện thì làm sao máy tính connect được với wifi hay lấy các thông số với thời gian cũng như chạy lệnh ping chẳng hạn. Các package hay thư viện http ta sử dụng ở tầng thấp nhất của nó chính là dùng các module built-in của hệ điều hành mà thôi. Do đó trong C nếu có thể thao tác với phần cứng thì có thể trigger các module này để thao tác với network.
 
 -> Fintech: là finance và technology, công nghệ tài chính. Là việc sáng tạo công nghệ ứng dụng trong các dịch vụ tài chính. Từ này xuất hiện khi IT dần xâm lấn vào các hệ thống tiền tệ.
-
--> Các trang git đặc biệt:
-https://github.com/kamranahmedse/developer-roadmap => Tổng hợp roadmap cần để học bất cứ thứ gì mới, gồm Docker, mongodb, golang, devops, fullstack,..
-https://github.com/public-apis/public-apis => Tổng hợp api của mọi lĩnh vực từ con vật, đời sống, crypto cũng có
-https://github.com/donnemartin/system-design-primer => Tổng hợp kiến trúc của các hệ thống lớn trong thực tế, có cả amazon, google hay các system design phức tạp
-
--> URL tổng hợp phím tắt của VSC: https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf
 
 -> So sánh về memory giữa các ngôn ngữ (k xét về tốc độ chạy task):
 Rust tokio vẫn là ngôn ngữ tốn ít memory nhất so với mọi ngôn ngữ khác

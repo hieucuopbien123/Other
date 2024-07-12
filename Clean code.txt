@@ -1,179 +1,161 @@
-# Clean Code:
+#***Clean Code
 - Đặt tên cho 1 hàm phải nói được tất cả nhưng gì nó làm. Nếu 1 hàm làm quá nhiều nv làm tên quá dài thì code chưa clean, cần tách ra nhiều hàm để chia nhiệm vụ ra và hàm này đặt thành 1 tên chung nhưng vẫn phải đủ specific mà sẽ k lẫn với bất cứ hàm nào ở file khác
-
-﻿-Đặt tên theo mục đích sử dụng
--Các phần tử chia nhỏ có thể thêm vào thành 1 class vì sau này có thể sử dụng hàng tá chức năng lq tới nó
--K đặt số 1 lẫn với l và 0 lẫn với O
--K đặt 1 cái tên quá dài và chỉ khác nhau có 1 tí khó nhận ra
--K đặt tên sai lầm ý nghĩa, ví dụ accountList nó phải là 1 list(1 container chứa thông tin truy xuất đc kiểu mảng VD at()), nếu kp list thì có thể cho là accounts hay accountGroup tránh nhầm lẫn
--Làm cho sự khác biệt giữa các tên trở nên rõ ràng. Vd: teacher()/teacherData()/teacherInfo()=>khi viết như thế này thì khi quay lại chả biết nên dùng hàm nào or đặt là teacher/theTeacher hoặc customer/customerObject đều k specific=> cần tránh dùng variable trong variable name, tránh dùng table trong table name vd:teacherBob/teacherMartin-> nếu martin nó cần specific là teacher thì dùng ok nhưng nếu Ct đó k cần phân biệt vì chỉ toàn teacher k thì k cần dùng, nếu đề bài cần specific những teacher đặc biệt nào thì nói ra
--Đặt tên phải đủ mức độ specific đến nỗi là tưởng tượng 10 năm sau mình quay lại đọc code mà vẫn hiểu. Vd: fromObject()->hàm này ta hiểu là lấy 1 cj đó nếu kq là 1 class k sợ nhầm thì ok, nhưng nếu kq là 1 int thì vỡ mồm-> khi dùng các tên thì nên đặt ra câu hỏi là các từ trong biến giải nghĩa cho vc gì, nếu dùng from/to thì phải hiểu nó from cj và cho ra cj trên qđ 1 ng kb j về lập trình
--Hạn chế viết tắt kiểu phụ âm hay đặt tên k thể phát âm đc
--Đặt tên search đc-> k đặt tên là một chữ cái
--K đặt tiền tố hậu tố để specific nx trừ khi quá cần thiết.
--Hạn chế đặt tên theo kiểu phải ánh xạ tinh thần mới hiểu.VD: biến vòng lặp i,j,k ta nên thay bằng cj đó VD: row/col/count nếu có thể
--Đặt tên class nên là danh từ k chung VD: customer,wikipage,account->tránh từ như manager,processor,data,info,... nếu đặt phải thêm từ specific nó, k đc đặt là verb.
--Method thì tên nên là verb or verb phrase VD: postPayment,deletePage,save,... Các hàm mặc định nên đặt là get,set,is. Hàm khởi tạo trùng thì nên dùng static method miêu tả đối số. VD khởi tạo biến complex: Complex fulcrumPoint=Complex.FromRealNumber(23.0) tốt hơn nh so với Complex fulcrumPoint=new Complex(23.0)
--Khi hàm có nhiều đối số dễ lẫn thì đặt tên miêu tả đối số truyền vào đầu tiên để biết truyền cj luôn
--Tìm tên diễn tả trọn vẹn ý nghĩa, nếu k thì specific đủ để kbh gặp biến khác trùng tên và pb đc vs tất cả các biến khác-> vì khi đặt tên Vd teacher thì luôn có khả năng phải đặt những object khác là englishTeacher sau đó lại classA1EnglishTeacher
--Dùng một từ ngữ nhất quán, k dùng nh từ đồng nghĩa
--Dùng 1 từ 1 khái niệm duy nhất của CT.Vd:phân biệt add,insert,append-> nếu 2 class khác nhau cùng dùng add-> add chỉ đc mang 1 nghĩa
--Nếu khó diễn tả ý nghĩa vì diễn tả bối cảnh khó thì đặt vào trong 1 class sẽ rút gọn cho vc đặt tên dễ hơn
--Code viết phải nhỏ và nhỏ hơn nx=> 1 func nên dừng lại ở khoảng 20 dòng
--Độ thụt dòng chỉ nên dừng lại ở 1 2 tab, các câu điều kiện if else nên chứa khối câu lệnh chỉ là 1 func lớn. Chia func thành nh phần nhỏ, 1 func có thể có multi steps nhưng chỉ đc thực hiện 1 thứ
--Cả func nên có cùng một cấp độ trừu tượng mỗi câu lệnh, k trộn lẫn. Vd: 1 func thao tác với trường học thì các lệnh bên trong chỉ nên 1 cấp độ trừu tượng là giáo viên, học sinh, cơ sở vật chất chứ k nên thao tác với cấp độ con của hs là đồ dùng như tẩy,bút
--Stepdown Rule: các function sắp xếp theo mức độ trừu tượng từ trên xuống khi định nghĩa. VD:
+- Sử dụng tên mô tả những gì mà func làm, nếu nh func dễ nhầm đối số thì mô tả thứ tự đối số.
+- Đặt tên theo mục đích sử dụng
+- Các phần tử chia nhỏ có thể thêm vào thành 1 class vì sau này có thể sử dụng hàng tá chức năng lq tới nó
+- K đặt số 1 lẫn với l và 0 lẫn với O
+- K đặt 1 cái tên quá dài và chỉ khác nhau có 1 tí khó nhận ra
+- K đặt tên sai lầm ý nghĩa, ví dụ accountList nó phải là 1 list(1 container chứa thông tin truy xuất đc kiểu mảng VD at()), nếu kp list thì có thể cho là accounts hay accountGroup tránh nhầm lẫn
+- Làm cho sự khác biệt giữa các tên trở nên rõ ràng. Vd: teacher()/teacherData()/teacherInfo() => khi viết như thế này thì khi quay lại chả biết nên dùng hàm nào or đặt là teacher/theTeacher hoặc customer/customerObject đều k specific. Cần tránh dùng variable trong variable name, tránh dùng table trong table name Vd : teacherBob/teacherMartin thì nếu martin nó cần specific là teacher thì dùng ok nhưng nếu Ct đó k cần phân biệt vì chỉ toàn teacher k thì k cần dùng.
+- Đặt tên phải đủ mức độ specific đến nỗi là tưởng tượng 10 năm sau mình quay lại đọc code mà vẫn hiểu. Vd: fromObject() -> hàm này ta hiểu là lấy 1 cj đó nếu kq là 1 class k sợ nhầm thì ok, nhưng nếu kq là 1 int thì vỡ mồm -> khi dùng các tên thì nên đặt ra câu hỏi là các từ trong biến giải nghĩa cho vc gì, nếu dùng from/to thì phải hiểu nó from cj và cho ra cj trên qđ 1 ng kb j về lập trình
+- Hạn chế viết tắt kiểu phụ âm hay đặt tên k thể phát âm đc
+- Đặt tên search đc -> k đặt tên là một chữ cái
+- K đặt tiền tố hậu tố để specific nx trừ khi quá cần thiết, bao nhiêu prefix suffix cho đủ.
+- Hạn chế đặt tên theo kiểu phải ánh xạ tinh thần mới hiểu.VD: biến vòng lặp i,j,k ta nên thay bằng cj đó VD: row/col/count nếu có thể
+- Đặt tên class nên là danh từ k chung VD: customer, wikipage, account -> Tránh từ như manager, processor, data, info,... nếu đặt phải thêm từ specific nó, k đc đặt là verb.
+- Method thì tên nên là verb or verb phrase VD: postPayment, deletePage, save,... Các hàm mặc định nên đặt là get, set, is. Hàm khởi tạo trùng thì nên dùng static method miêu tả đối số. VD khởi tạo biến complex: Complex fulcrumPoint = Complex.FromRealNumber(23.0) tốt hơn nh so với Complex fulcrumPoint = new Complex(23.0)
+- Khi hàm có nhiều đối số dễ lẫn thì đặt tên miêu tả đối số truyền vào đầu tiên để biết truyền cj luôn
+- Tìm tên diễn tả trọn vẹn ý nghĩa, nếu k thì specific đủ để kbh gặp biến khác trùng tên và pb đc vs tất cả các biến khác => vì VD khi đặt tên Vd teacher thì luôn có khả năng phải đặt những object khác là englishTeacher sau đó lại classA1EnglishTeacher
+- Dùng một từ ngữ nhất quán, k dùng nh từ đồng nghĩa
+- Dùng 1 từ 1 khái niệm duy nhất của CT. Vd: phân biệt add, insert, append -> nếu 2 class khác nhau cùng dùng add thì add chỉ đc mang 1 nghĩa
+- Nếu khó diễn tả ý nghĩa vì diễn tả bối cảnh khó thì đặt vào trong 1 class sẽ rút gọn cho vc đặt tên dễ hơn
+- Code viết phải nhỏ và nhỏ hơn nx => 1 func nên dừng lại ở khoảng 20 dòng
+- Chia func thành nh phần nhỏ, 1 func có thể có multi steps nhưng chỉ đc thực hiện 1 thứ
+- Cả func nên có cùng một cấp độ trừu tượng mỗi câu lệnh, k trộn lẫn. Vd: 1 func thao tác với trường học thì các lệnh bên trong chỉ nên 1 cấp độ trừu tượng là giáo viên, học sinh, cơ sở vật chất chứ k nên thao tác với cấp độ con của hs là đồ dùng như tẩy,bút
+- Stepdown Rule: các function sắp xếp theo mức độ trừu tượng từ trên xuống khi định nghĩa. VD:
   public function index()
-    {
-        $this->subIndex1();
-        $this->subIndex2();
-        $this->subIndex3();
-        $this->subIndex4();
-    }
+  {
+    $this->subIndex1();
+    $this->subIndex2();
+    $this->subIndex3();
+    $this->subIndex4();
+  }
+  public function subIndex1()
+  {
+    $this->functionA();
+    $this->functionB();
+  }
+  public function functionA() {}
+  public function functionB() {}
+  public function subIndex2() {}
+  public function subIndex3() {}
+- Code func phải tuân theo open close principle => vì thực hiện 1 chức năng nên func sau khi thực hiện xong sẽ k bị edit, vì nếu edit trong TL sẽ thành chức năng khác.
+- Câu lệnh switch đôi khi làm hàm thực hiện nh chức năng và dài tuy từng TH. Ta có thể nhét nó vào tầng thấp or tạo ra các class con kế thừa cho từng TH để viết hàm riêng từng TH chứ k để switch nv.
+- Func chỉ nên có 2 tham số là max, 3 tham số thì nên tránh nếu có thể or nhét vào 1 class or tuple để giảm tham số
+- Hàm k đc có tác dụng phụ, tức là các chức năng phụ khác k có trong tên hàm, nếu có thì tên hàm phải thể hiện được
+- Dùng hàm tùy loại hàm. Ví dụ: appendFooter(report) sẽ hiểu là appendFooter vào report hay append report vào footer. Nếu dùng report.addFooter() thì ok. Hàm nên ở thể chủ động, nhưng đôi khi nó ngược ở thể bị động cũng được, vì report được người dùng thêm footer chứ kp nó thêm. Có thể tạo class ReportBuilder cho nó addFooter là ok nhất.
+- 1 func chỉ nên làm 1 cj đó(v) or trả lời 1 cj đó(adj) mà kbh nên làm cả 2 => kqtr. Vd:
+bool set(string attribute,string name) => if(set("username","bob")) gán username với bob thành công thì. Ta nên tách ra làm hai hàm attributeExist và setAttribute sẽ ok hơn.
+- Nên ném ra exception hơn là trả về mã lỗi sẽ gom code clean hơn -> sau đó mỗi khối try catch lại viết thành 1 hàm riêng. Chính hàm xử lý lỗi cx chỉ thực hiện 1 thứ. Vd: nếu lênh try có trong func thì nó chỉ nên ở đầu hàm và sau khối try catch éo xử lý cj khác. 
+Các mã lỗi thông thường nên nhét vào 1 class or enum. Nhiều class khác sẽ import và dùng nó để sửa 1 mã lỗi là mọi nơi tự đúng. Nếu dùng exception thì cũng thì k lo vc đó vì mọi class exception đều kế thừa từ dẫn xuất của class exception nên chỉ cần chỉnh sửa trong class lớn là ok.
+- Các hàm nhỏ ta có thể dùng break, continue, và chỉ nên có 1 return từ đầu vào đến hết đầu ra, k áp dụng vs hàm lớn
+- Quy tắc k đc trùng lặp code. Ta có thể chỉn chu viết đến đâu clean đến đấy hoặc viết xong r tối ưu lại.
 
-    public function subIndex1()
-    {
-        $this->functionA();
-        $this->functionB();
-    }
+- Comment là vc mô tả cho sự thất bại trong việc thể hiện ý nghĩa qua các dòng code. Nên ta nên thể hiện qua code hơn là dùng comment. 
+- Comment chỉ nên có khi code thư viện, để mô tả cách sử dụng. Comment làm cảnh báo khi dùng hàm gì đó có khả năng gây lỗi. Comment làm khuếch đại hàm nào là qtrong. TODO comment, những gì phải làm mà chưa làm đc.
+- Tránh comment độc thoại, comment để tránh code, đã comment là comment chuẩn diễn ta đầy đủ ý nghĩa mà về sau ta kp xem lại toàn bộ ms hiểu mà nhìn phát hiểu luôn, k gây nhiễu.
+Nh lúc ta viết commemt trc r viết code thực hiện những điều ghi trong comment => hãy viết sao cho comment đo đc xoá đi luôn
+- Comment có thể bị ở lại trong code trong nh năm nên dùng hạn chế vì vài năm sau nhìn vào thì sẽ bị loạn or bỏ qua
+- K comment hoá dòng code. K comment xa dòng code cần comment
+- Comment ngắn gọn và k quá nh thông tin, phải có qh rõ ràng vs code.
+- Những cái comment lẻ tẻ giải thích những thứ lặt vặt thì code nên thể hiện đc hết chứ hạn chế comment. Khi code bó tay k thể hiện hết đc thì dùng comment => luôn nhớ là ta dùng thì phải đặt câu hỏi ng khác nhìn vào code có hiểu k, 10 năm sau nhìn lại thì đống comment đó còn cần thiết k
 
-    public function functionA() {}
-    public function functionB() {}
-    
-    public function subIndex2() {}
-    public function subIndex3() {}
--Code func phải tuân theo open close principle=> vì thực hiện 1 chức năng nên func sau khi thực hiện xong sẽ k bị edit, vì nếu edit trong TL sẽ thành chức năng khác.
--Câu lệnh switch đôi khi làm hàm thực hiện nh chức năng và dài tuy từng TH. Ta có thể nhét nó vào tầng thấp or tạo ra các class con kế thừa cho từng TH để viết hàm riêng từng TH chứ k để switch nv.
--Sử dụng tên mô tả những gì mà func làm, nếu nh func dễ nhầm đối số thì mô tả thứ tự đối số.
--Func chỉ nên có 2 tham số là max, 3 tham số thì nên tránh nếu có thể or nhét vào 1 class để giảm tham số
--hàm k đc có tác dụng phụ, tức là các chức năng phụ khác k có trong tên hàm, nếu có thì tên phải có
--Dùng hàm tùy loại hàm. Ví dụ: appendFooter(report) sẽ hiểu là appendFooter vào report hay append report vào footer=> tốt nhất là report.appendFooter()
--1 func chỉ nên làm 1 cj đó(v) or trả lời 1 cj đó(adj) mà kbh nên làm cả 2. Vd:
-bool set(string attribute,string name) => if(set("username","bob")) có thể hiểu là username đã tồn tại với giá trị bob thì/gán username với bob thành công thì.(dưới câu if thì chỉ hiểu là tính từ) ta nên tách ra làm hai hàm attributeExist và setAttribute sẽ ok hơn.
--Nên ném ra exception hơn là trả về mã lỗi sẽ gom code lỗi vô sẽ clean hơn-> sau đó mỗi khối try catch lại viết thành 1 hàm riêng. Chính hàm xử lý lỗi cx chỉ thực hiện 1 thứ. Vd: nếu lênh try có trong func thì nó chỉ nên ở đầu hàm và sau khối try catch éo xử lý cj khác. 
-Các mã lỗi thông thường nên nhét vào 1 class or enum. Nhiều class khác sẽ import và dùng nó=> nếu ta tự viết mã lỗi thì mỗi lần chỉnh sửa class này thì phải sửa toàn bộ các class khác, nhưng nếu dùng exception thay vì mã lỗi thì k lo vc đó vì mọi class exception đều kế thừa từ dẫn xuất của class exception nên chỉ cần chỉnh sửa trong class lớn là đc(class lớn này xử lý các mã lỗi chung mà ta chỉnh thì sửa trong đây, các class nhỏ khác sẽ chỉ thêm các lỗi nhỏ phát sinh riêng của biến nào đó)
--Các hàm nhỏ ta có thể dùng break, continue, và chỉ 1 return từ đầu vào đến hết đầu ra, k áp dụng vs hàm lớn
--Quy tắc k đc trùng lặp code. Ta có thể chỉn chu viết đến đâu clean đến đấy hoặc viết xong r tối ưu lại.
-
--Comment là vc mô tả cho sự thất bại trong việc thể hiện ý nghĩa qua các dòng code. Nên ta nên thể hiện qua code hơn là dùng comment.
--Dùng comment làm sáng tỏ ý nghĩa, nhưng nh khi nó cx k chính xác và khó để hiểu.
--Comment làm cảnh báo khi dùng hàm gì đó có khả năng gây lỗi. Comment làm khuếch đại hàm nào là qtrong
--TODO comment, những gì phải làm mà chưa làm đc.
--Tránh comment độc thoại, comment để tránh code, đã comment là comment chuẩn diễn ta đầy đủ ý nghĩa mà về sau ta kp xem lại toàn bộ ms hiểu mà nhìn phát hiểu luôn. K comment thừa, gây nhiễu
-Sẽ-Nh lúc ta viết commemt trc r viết code thực hiện những điều ghi trong comment-> hãy viết sao cho comment đo đc xoá đi luôn
--Comment có thể bị ở lại trong code trong nh năm nên dùng hạn chế vì vài năm sau nhìn vào thì sẽ bị loạn or bỏ qua
--K comment hoá dòng code
--K comment mã HTML
--K comment xa dòng code cần comment
--Comment ngan gọn và k quá nh thông tin, phải có qh rõ ràng vs code.
-- Những cái comment lẻ tẻ giải thích những thứ lặt vặt thì code nên thể hiện đc hết chứ hạn chế comment. Khi code bó tay k thể hiện hết đc thì dùng comment=> luôn nhớ là ta dùng thì phải đặt câu hỏi ng khác nhìn vào code có hiểu k, 10 năm sau nhìn lại thì đống comment đó còn cần thiết k
-
--Các file lớn chỉ nên có từ 200-500 dòng code. Tên file cũng phải có khả năng giải thích. Đầu file sẽ là khái niệm và thuật toán phục vụ cho bên dưới, càng xuống thì mọi thứ càng sáng tỏ và các hàm có mức độ thấp nhất ở cuối.
--Enter tách code hợp lý. Các định nghĩa có liên quan với nhau nên đc giữ gần nhau theo chiều dọc, kbh để TH cần tìm 1 cái gì đó mà k biết ở đâu
--Các biến nên đc khai báo gần với nơi sử dụng chúng. Biến cục bộ của hàm nên để ở ngay đầu hàm. Có các TH khai báo đầu khối lệnh.
--Các biến instance nên được khai báo cùng nhau ở vị trí dễ thấy(biến thực thể-biến tv k static)
--Các hàm bên trên nên sử dụng các hàm khai báo phía bên dưới. Các thứ qtr xuyên suốt class để ở đầu, còn các thứ lặt vặt để cuối
+- Các file lớn chỉ nên có từ 200-500 dòng code. Tên file cũng phải có khả năng giải thích. Càng xuống thì mọi thứ càng sáng tỏ. Các hàm bên trên nên sử dụng các hàm khai báo phía bên dưới. Các thứ qtr xuyên suốt class để ở đầu, còn các thứ lặt vặt để cuối
+- Enter tách code hợp lý. Các định nghĩa có liên quan với nhau nên đc giữ gần nhau theo chiều dọc, kbh để TH cần tìm 1 cái gì đó mà k biết ở đâu
+- Các biến nên đc khai báo gần với nơi sử dụng chúng. Biến cục bộ của hàm nên để ở ngay đầu hàm. Có các TH khai báo đầu khối lệnh. Các biến instance nên được khai báo cùng nhau ở vị trí dễ thấy
 - VD định dạng ngang nên tách toán tử và cả dấu “:” bằng space:
 public static double root(int a, int b, int c)
 {
-    double determinant = determinant(a, b, c);
-    return (-b - Math.sqrt(determinant)) / (2*a);
+  double determinant = determinant(a, b, c);
+  return (-b - Math.sqrt(determinant)) / (2*a);
 }
--K nên viết liền luôn các hàm mà nên xuống dòng lùi đầu dòng kể cả ngắn
--Thân giả cx phải lùi đặc biệt là chỉ 1 dấu chấm phẩy. VD:
-while (dis.read(buf, 0, readBufferSize) != -1)
-    ;
 
--Để ẩn vc triển khai, ta nên cung cấp các abstract interface cho phép ng dùng thao tác vs bản chất của dữ liệu mà k cần quan tâm đến cách chúng hoạt động(nhìn vào interface chứa các hàm và chỉ cần biết đầu vào đầu ra)
-(cấu trúc dữ liệu là các dữ liệu có liên quan với nhau hợp lại tạo nên cấu trúc dữ liệu, 1 cấu trúc dữ liệu k cần khai báo hàm xử lý)
--Code theo cấu trúc dữ liệu sẽ khó thêm dữ liệu mới, code theo hướng đối tượng sẽ khó thêm hàm mới. Ta tự vận dụng linh hoạt.
--Law of Demeter: một module k nên biết về thành phần bên trong của đối tượng mà nó sử dụng. Các đối tượng sẽ ẩn thành phần bên trong của chúng và đưa ra các phương thức để sử dụng. Chính vì ta cần ẩn các TP bên trong nên k đc dùng các phương thức get/set vì như v private chả khác gì public. Đã là private thì đừng sử dụng ở ngoài=> tức là 1 hàm k nên gọi các phương thức khác của phương thức khác, nó chỉ làm vc vs bạn chứ k làm vc vs bạn của bạn tránh rắc rối.
-Vd train wrecks: final string outputDir = ctxt.getOptions().getScratchDir().getAbsolutePath();
-=>ta nên tách: Options opts = ctxt.getOptions();
-File scratchDir = opts.getScratch();
-final string outputDir = scratchDir.getAbsolutePath();
-sẽ tốt hơn. Và theo LoD ta k nên dùng như này nếu ctxt, options, scratchDir là class còn nếu là cấu trúc dữ liệu k có hàm xử lý thì k vi phạm LoD
-=> nếu nó k vi phạm LoD vì là cấu trúc dữ liệu thì ok nhưng nên để public chứ get/set như v khó vl.
+- Thân giả cx phải lùi đặc biệt là chỉ 1 dấu chấm phẩy. VD:
+while (dis.read(buf, 0, readBufferSize) != -1)
+  ;
+
+- Để ẩn vc triển khai, ta nên cung cấp các abstract interface cho phép ng dùng thao tác vs bản chất của dữ liệu mà k cần quan tâm đến cách chúng hoạt động (nhìn vào interface chứa các hàm và chỉ cần biết đầu vào đầu ra)
+- Code theo cấu trúc dữ liệu sẽ khó thêm dữ liệu mới, code theo hướng đối tượng sẽ khó thêm hàm mới. Ta tự vận dụng linh hoạt.
+
+- Law of Demeter: một module k nên biết về thành phần bên trong của đối tượng mà nó sử dụng. Các đối tượng sẽ ẩn thành phần bên trong của chúng và đưa ra các phương thức để sử dụng. Nó chỉ làm vc vs bạn chứ k làm vc vs bạn của bạn tránh rắc rối. Nếu cần dùng bạn của bạn, sẽ phải gọi thông qua bạn thôi.
+Vd dùng sai: final string outputDir = ctxt.getOptions().getScratchDir().getAbsolutePath();
+=> Ta nên tách: Options opts = ctxt.getOptions(); File scratchDir = opts.getScratch(); final string outputDir = scratchDir.getAbsolutePath(); sẽ tốt hơn. Và theo LoD ta k nên dùng như này nếu ctxt, options, scratchDir là class còn nếu là cấu trúc dữ liệu k có hàm xử lý thì k vi phạm LoD
+=> Nếu nó k vi phạm LoD vì là cấu trúc dữ liệu thì ok nhưng nên để public chứ get/set như v khó vl.
 final string outputDir = ctxt.options.scratch.absolutePath;
-=> chốt LoD: 1 hàm của đối tượng A thì chỉ đc dùng: A; đối tượng tạo bởi hàm; đối số truyền vào hàm; một đối tượng là biến instance của A;(k đc gọi đến hàm của hàm của 1 thành phần bên trong A)
-=>nếu dùng hàm của A mà gọi đến 1 hàm của a là thuộc tính của A có thể tạo con lai vừa là đối tượng, vừa là 1 cấu trúc dữ liệu. Nó khiến cho code của ta bị loạn, ta sẽ lầm lẫn k biết đang tạo ra cj-1 là cấu trúc đơn giản hay là 1 đối tượng với nhiều phương thức
--Giải pháp: ví dụ trên chẳng hạn ta cần lấy cái absolutePath từ ctxt. Nếu ctxt là 1 đối tượng thì dùng như v vi phạm LoD. Nó là 1 đối tượng thì ta nên bảo nó làm gì chứ k nên hỏi nó về cấu trúc bên trong của nó. Nêu ta dùng sai: ctxt.getAbsolutePathOfScratchDirectoryOption(); k ổn vì sẽ tạo ra nhiều hàm chồng chéo lên nhau để lấy được cj đó ở bên trong. Nếu dùng ctx.getScratchDirectoryOption().getAbsolutePath(); để tránh LoD vì getScratchDirectoryOption() ta cho nó trả về 1 cấu trúc cx éo ổn vì chồng chéo. 
+=> Chốt LoD: 1 hàm của đối tượng A thì chỉ đc dùng: A và mọi thứ trong A; đối tượng tạo bởi hàm; đối số truyền vào hàm; một đối tượng là biến instance của A; (k nên gọi đến hàm của hàm của 1 thành phần bên trong A)
+=> Nếu trong 1 hàm của A mà gọi đến 1 hàm của a là thuộc tính của A có thể tạo con lai vừa là đối tượng, vừa là 1 cấu trúc dữ liệu. Nó khiến cho code của ta bị loạn, ta sẽ lẫn k biết đang tạo ra cj, 1 cấu trúc đơn giản hay là 1 đối tượng với nhiều phương thức
+- Giải pháp: ví dụ trên chẳng hạn ta cần lấy cái absolutePath từ ctxt. Nếu ctxt là 1 đối tượng thì dùng như v vi phạm LoD. Nó là 1 đối tượng thì ta nên bảo nó làm gì chứ k nên hỏi nó về cấu trúc bên trong của nó. Nêu ta dùng sai: ctxt.getAbsolutePathOfScratchDirectoryOption(); k ổn vì sẽ tạo ra nhiều hàm chồng chéo lên nhau để lấy được cj đó ở bên trong. Nếu dùng ctxt.getScratchDirectoryOption().getAbsolutePath(); để tránh LoD vì getScratchDirectoryOption() ta cho nó trả về 1 cấu trúc cx éo ổn vì chồng chéo. 
 => ta phải hiểu nguyên nhân vì sao nó cần lấy absolutePath tách ra khỏi cái scratch, option=> giả sử mục đích để lấy tên file: 
 String outFile = outputDir + "/" + className.replace('.', '/') + ".class";
 FileOutputStream fout = new FileOutputStream(outFile);
 BufferedOutputStream bos = new BufferedOutputStream(fout);
-=>tạo 1 hàm như này:
+=> Thì nên tạo 1 hàm như này để ctxt sẽ ẩn đi nội dung bên trong và hàm hiện tại k vi phạm LoD:
 BufferedOutputStream bos = ctxt.createScratchFileStream(classFileName);
-=>ctxt sẽ ẩn đi nội dung bên trong và hàm hiện tại k vi phạm LoD
--Vd về cấu trúc dữ liệu chuẩn: 
+
+- Vd về cấu trúc dữ liệu chuẩn: 
 public class Circle {
-public Point center;
-public double radius;
+  public Point center;
+  public double radius;
 }
-=>nó k có các hàm xử lý, mà sẽ đc xử lý ở các class khác dùng nó ví dụ 1 class Geometry chuyên thao tác các tính toán hình học.
-Vd về đối tượng dữ liệu-> có phương thức:
+=> Nó k có các hàm xử lý, mà sẽ đc xử lý ở các class khác dùng nó ví dụ 1 class Geometry chuyên thao tác các tính toán hình học.
+Vd về đối tượng dữ liệu có phương thức:
 public class Square implements Shape {
-private Point topLeft;
-private double side;
-public double area() {
-return side*side;
+  private Point topLeft;
+  private double side;
+  public double area() {
+    return side*side;
+  }
 }
-}
-=>dùng tùy điểm lợi như trên đề cập. Chú ý khi dùng các hàm implement cấu trúc dữ liệu ở 1 class khác hay các hàm của đối tượng dữ liệu thì k đc vi phạm LoD(hiểu nhanh: nếu gọi hàm trả về 1 đối tượng dữ liệu r dùng hàm của nó tiếp thì k nên; nếu gọi hàm trả về cấu trúc dữ liệu thì lại ok).
--Ví dụ trong app student management: nếu ta gọi getStudent() để lấy ra 1 biến kiểu Student thì nếu Student là 1 đối tượng dữ liệu(1 class có đầy đủ các phương thức và thuộc tính) thì sau đó gọi tiếp các hàm của Student sẽ rất dễ bị loạn. Còn nếu Student là 1 cấu trúc dữ liệu chỉ có thuộc tính, còn các hàm implement của nó nằm trong class Person thì đc, sau đó gọi các phương thức của student trong class person thoải mái, vì khi đó ta chỉ như truy cập 1 hàm trong student coi là 1 thuộc tính của class mà thôi.
--Trong bất kỳ hệ thống nào, đôi khi chúng tôi sẽ muốn việc thay đổi dữ liệu trở nên linh hoạt, vì vậy chúng tôi chọn đối tượng cho hệ  thống. Nhưng thỉnh thoảng chúng tôi lại cần thêm những hàm mới, và vì vậy chúng tôi cần chọn kiểu cấu trúc. Các nhà phát triển phần mềm giỏi luôn biết cách tiếp cận tốt nhất trong những trường hợp này.
+=> Chú ý khi dùng các hàm implement cấu trúc dữ liệu ở 1 class khác hay các hàm của đối tượng dữ liệu thì k đc vi phạm LoD (Tức nếu gọi hàm trả về 1 đối tượng dữ liệu r dùng hàm của nó tiếp thì k nên; nếu gọi hàm trả về cấu trúc dữ liệu thì lại ok)
+- Ví dụ trong app student management: nếu ta gọi getStudent() để lấy ra 1 biến kiểu Student thì nếu Student là 1 đối tượng dữ liệu(1 class có đầy đủ các phương thức và thuộc tính) thì sau đó gọi tiếp các hàm của Student sẽ rất dễ bị loạn. Còn nếu Student là 1 cấu trúc dữ liệu chỉ có thuộc tính, còn các hàm implement của nó nằm trong class Person thì đc, sau đó gọi các phương thức của student trong class person thoải mái.
+- Trong bất kỳ hệ thống nào, đôi khi chúng tôi sẽ muốn việc thay đổi dữ liệu trở nên linh hoạt, vì vậy nên chọn đối tượng cho hệ thống. Nhưng thỉnh thoảng chúng tôi lại cần thêm những hàm mới, và vì vậy chúng tôi cần chọn kiểu cấu trúc. Các nhà phát triển phần mềm giỏi luôn biết cách tiếp cận tốt nhất trong những trường hợp này.
 
--Nên sử dụng try-catch bắt exception hơn là return giá trị trong code.
-Vd nên dùng: try{ doSth(); } catch (Exception& ){ } sau đó khai báo doSth(){}
-Ví dụ ta đang viết 1 hàm doSth(), tự dưng thấy nó có TH lỗi sai, thế là ta chia ra return false, return true=> sau đó các hàm gọi doSth ta đều phải thêm đoạn kiểm tra nó true hay false, xong phải xem vì sao nó false. Trừ khi nó làm hàm mục đích là để kiểm tra, chứ nếu ta expect nó true nhưng nếu có lỗi sẽ false thì nên throw nó là tôt nhất. Xong ta có thể catch và các hàm nào gọi nó k phải lo kiểm tra nx.
--Code chỉ cần có thể xảy ra ngoại lệ thì nên dùng try catch throw luôn
--Nên viết 1 class xử lý cái đống lỗi ấy. Ví dụ ta tạo 1 biến class A xong gọi 1 hàm open() chẳng hạn mà ta bắt ra đc 10 lỗi cơ, Ví dụ các lỗi thuộc 10 class khác nhau Exception1,Exception2,.. Ta k thể cứ mỗi lần khai báo biến class A xong open là phải xử lý bắt 10 lỗi ấy. Ta có thể dùng biến class Letter hoặc kế thừa từ biến A, hoặc chứa biến A là biến thành viên, class này nên là 1 class chung bao gồm những class như A. Sau đó ta định nghĩa hàm:
-Letter::open(){ try{ A.open(); }catch(Exception1 e1){throw Ex(e1);} catch(Exception2 e2){throw Ex(e2);}... }=>điều đb là ta viết mỗi 1 lần và từ 10 class Exception ta rút gọn về 1 class Ex, class Ex được tạo từ 10 class kia, mỗi class sẽ khởi tạo 1 kiểu khác nhau. Thế là mỗi khi gọi Letter letter;try{ letter.open(); catch(Ex e){}; } bắt mỗi class Ex là xong. Như thế ta sẽ k phụ thuộc vào cái Exception API có sẵn, mà ta muốn bắt gì thì bắt, muốn thêm gì thì cứ vào class Ex ghi thêm thôi->nên đóng gói lại vào 1 lớp riêng khi ngoại lệ do bên thứ 3 xử lý or lẫn lộn với code logic
--K nên dùng ngoại lệ khi nó lẫn lộn vs code logic, xử lý bth hộ.
--K nên trả về NULL. Giả sử có hàm dài nhiều đối tượng và ta cứ phải check NULL liên tục thì mới đi tiếp. Vấn đề là có 10 object được dùng thì cứ if liên tục có  NULL k và nếu null thì in lỗi=> mỗi khi return NULL, ta nên cân nhắc: 1 là throw exception, 2 là trả ra 1 special case object=>từ đó mỗi khi gọi hàm ta sẽ hạn chế vc kiểm tra null và xử lý.
-VD: thay vì List<Employee> employees = getEmployees(); if(employees != null){for(Employee e : employees){totalPay += e.getPay();}}else{}
-ta có thể làm lại hàm getEmployees throw ra special case->public List<Employee> getEmployees(){if( .. there are no employees .. )return Collections.emptyList();}
-khi đó hàm chỉ còn là->List<Employee> employees = getEmployees();for(Employee e : employees){ totalPay += e.getPay(); }
--Khi viết hàm ta nên tránh TH ng dùng truyền vào NULL. Cái này ta nh lần kiểm tra null r, ta có thể làm v or assert or throw.
+- Nên sử dụng try-catch bắt exception hơn là return giá trị trong code.
+Vd nên dùng: try{ doSth(); } catch (Exception&){ } sau đó khai báo doSth(){}
+Ví dụ ta đang viết 1 hàm doSth(), tự dưng thấy nó có TH lỗi sai, thế là ta chia ra return false, return true => sau đó các hàm gọi doSth ta đều phải thêm đoạn kiểm tra nó true hay false, xong phải xem vì sao nó false. Trừ khi nó làm hàm mục đích là để kiểm tra, chứ nếu ta expect nó true nhưng nếu có lỗi sẽ false thì nên throw nó là tôt nhất. Xong ta có thể catch và các hàm nào gọi nó k phải lo kiểm tra nx.
+- Code chỉ cần có thể xảy ra ngoại lệ thì nên dùng try catch throw luôn
+- Nên viết 1 class xử lý cái đống lỗi ấy. Ví dụ ta tạo 1 biến class A xong gọi 1 hàm open() chẳng hạn mà ta bắt ra đc 10 lỗi cơ. VD các lỗi thuộc 10 class khác nhau Exception1, Exception2,.. Ta k thể cứ mỗi lần khai báo biến class A xong open là phải xử lý bắt 10 lỗi ấy. Ta có thể dùng biến class Letter hoặc kế thừa từ biến A, hoặc chứa biến A là biến thành viên, class này nên là 1 class chung bao gồm những class như A. Sau đó ta định nghĩa hàm:
+Letter::open(){ try{ A.open(); }catch(Exception1 e1){throw Ex(e1);} catch(Exception2 e2){throw Ex(e2);}... } => Viết logic mỗi 1 lần và từ 10 class Exception ta rút gọn về 1 class Ex, class Ex là base exception, mỗi class sẽ khởi tạo 1 kiểu khác nhau. Thế là mỗi khi gọi Letter letter;try{ letter.open(); catch(Ex e){}; } bắt mỗi class Ex là xong => nên đóng gói lại vào 1 lớp riêng khi ngoại lệ do bên thứ 3 xử lý or lẫn lộn với code logic.
+- Hàm k nên trả về NULL. Giả sử có hàm dài nhiều đối tượng và ta cứ phải check NULL liên tục thì mới đi tiếp => Mỗi khi return NULL, ta nên cân nhắc: 1 là throw exception, 2 là trả ra 1 empty object mà các hàm khác vẫn chạy bth với nó k bị lỗi => từ đó mỗi khi gọi hàm ta sẽ hạn chế vc kiểm tra null và xử lý.
+- Khi viết hàm ta nên tránh TH ng dùng truyền vào NULL.
 
--Ta luôn phải dùng đến các code của bên thứ 3, nơi mà họ đã làm sẵn cho ta các hàm. Tuy nhiên ta tái sử dụng nó thì k dùng hết mà nó thường cung nhiều hơn ra các hàm thừa. 
-VD:Map<Sensor> sensors = new HashMap<Sensor>();Sensor s = sensors.get(sensorId );->vd nó cung cho ta 1 class Map với rất nhiều hàm nhưng ta lại chỉ cần mỗi get(ID)chẳng hạn. Nếu v thì khi ta tạo nhiều biến Map ta sẽ dễ nhầm lẫn, VD sensor là Map, calculator cũng là kiểu Map,.. thì ta có thể khiến code dễ hiểu hơn bằng cách tạo lại 1 class sensor hoặc kế thừa hoặc chứa biến thành viên. Khi đó sensor chỉ cần dùng getById->đổi tên cho dễ hiểu và bên trong chỉ cần gọi hàm get. Khi đó class Map sẽ vị che dấu k ai biết.
+- Ta luôn phải dùng đến các code của bên thứ 3, nơi mà họ đã làm sẵn cho ta các hàm nhưng có nh hàm thừa k dùng đến.
+VD: Map<Sensor> sensors = new HashMap<Sensor>(); Sensor s = sensors.get(sensorId); -> VD nó cung cho ta 1 class Map với rất nhiều hàm nhưng ta lại chỉ cần mỗi get(ID)chẳng hạn. Ta có thể khiến code dễ hiểu hơn bằng cách tạo lại 1 class sensor hoặc kế thừa hoặc chứa biến thành viên. Khi đó sensor chỉ cần dùng mỗi getById và bên trong gọi lại hàm get.
 public class Sensors { private Map sensors = new HashMap(); public Sensor getById(String id) {return (Sensor) sensors.get(id);}}
--Viết test thử nghiệm hàm của thư viện bên thứ ba cũng là 1 cách học, để xem code đó có chạy và làm chức năng đúng như ta mong muốn hay k. Bên cạnh đó có thể tái sử dụng khi có bản cập nhật mới thì lại thay vào để xem có gì khác biệt, từ đó tìm ra lỗi hay sự k tương thích ngay lập tức và có thể quyết định dùng bản cũ có thể tốt hơn
--K dùng code ở bên kia ranh giới, tức vùng code mà ta k hiểu. Càng viết về những thứ cơ bản thì đến 1 mức sẽ có code mà ta k hiểu, vùng code đó ta tách riêng ra. Vc dùng như Map bên trên cũng chính là cách để tách đó. Code của ta nên tránh quá nhiều chi tiết về bên thứ 3. Khi mã bên thứ 3 thay đổi thì sẽ có ít điểm bảo trì hơn và nhất quán, ta kiểm soát đc mã của ta.
+- Nên viết test thử nghiệm hàm của thư viện bên thứ ba, để xem code đó có chạy và làm chức năng đúng như ta mong muốn hay k. Bên cạnh đó có thể tái sử dụng khi có bản cập nhật mới thì lại thay vào để xem có gì khác biệt, từ đó tìm ra lỗi hay sự k tương thích ngay lập tức và có thể quyết định dùng bản cũ có thể tốt hơn
+- K dùng code ở bên kia ranh giới, tức vùng code mà ta k hiểu. Càng viết về những thứ cơ bản thì đến 1 mức sẽ có code mà ta k hiểu, vùng code đó ta tách riêng ra. Vc dùng như Map bên trên cũng chính là cách để tách đó. Code của ta nên tránh quá nhiều chi tiết về bên thứ 3. Khi mã bên thứ 3 thay đổi thì sẽ có ít điểm bảo trì hơn và nhất quán.
 
--3 qt của TDD: k đc viết production code khi chưa từng viết failtest cho nó; K đc viết thêm unitest khi test khác đang fail; k đc viết production code mà chưa pass test fail;
--Viết test code cũng quan trọng như production code. Thà k viết test còn hơn viết test vs code bẩn.Test code giúp code ta mềm dẻo, tức là ta k sợ sự thay đổi sẽ tạo ra bug tiềm ẩn,thoải mái nâng cấp,thiết kế. Rất nh ltv bỏ qua điều này dẫn đến k maintain đc code do chính mình tạo ra.
--Code k đc chứa nh biến detail, ta nên chia nhỏ hàm ra. Nếu có nhiều biến detail thì khi đọc về sau ta sẽ phải hiểu hết các biến đó làm cái gì thì mới hiểu đc cả hàm. Thay vì v hãy giảm thiểu sao cho nhìn vào lần đầu tiên là hiểu nó làm cái gì
-VD:1 test code chia làm 3 phần: khởi tạo dữ liệu, chạy dữ liệu, check kết quả và assert chẳng hạn. Thì trong hàm test đó chỉ cần tầm 3 hàm để làm vc đó, còn 3 hàm detail làm gì thì viết riêng. Đó cx giúp ta tạo ra những hàm riêng dựa trên những hàm sẵn có,như 1 ngôn ngữ riêng cho test
--Gom các hàm tương tự nhau or cùng để thực hiện 1 chức năng vào làm 1 hàm duy nhất. Làm cho hàm càng ngắn cáng tốt khiến hàm đc đọc nhanh hơn.
--Vc tách ra 1 hàm và đặt tên hàm đó cho đúng sẽ như kiểu add thêm 1 comment hàm đố là gì, comment đó là tên hàm. Nh khi viết ta k hiểu detail đang làm gì.
--Số lượng assert trong 1 test nên nhỏ nhất có thể
--Những cái này đôi khi chỉ áp dụng vào các CT lớn, khi mà code ta viết có thể bảo trì và phát triển trong tương lai. Vc tách ra vì sau này bảo trì có thể sửa trong những hàm tách ra đó, chứ nếu code ở trg test với Ct nhỏ thì k cần quá hà khắc.
--Mục đích test trong 1 function nên nhỏ nhất có thể. Ví dụ test 3 thứ độc lập thì k nhét vào 1 func.
--1 test phải độc lập vs các test khác, k để lỗi chồng lỗi. Test phải chạy đc trên tất cả môi trường, tránh TH về sau test éo chạy đổ cho MT.
--Test k đc trả về boolean, kể cả pass hay fail. Ta k đc mất thời gian dài để đánh giá test đúng hay sai. Viết test unit trước production code, vì viết sau sẽ thấy production code rất khó để test, khi đó là ta design production code k đúng r. Viết thêm API cho test như 1 language riêng.
--Khi có lỗi dev có thể phi vào test class và kiểm tra xem đoạn code đó làm gì ngay. Hãy nghĩ vc viết code là cho 1 người khác k bt LT sử dụng.
+- 3 qt của TDD: k đc viết production code khi chưa từng viết failtest cho nó; K đc viết thêm unitest khi test khác đang fail; k đc viết production code mà chưa pass test fail;
+- Viết test code cũng quan trọng như production code. Thà k viết test còn hơn viết test vs code bẩn. Test code giúp code ta mềm dẻo, tức là ta k sợ sự thay đổi sẽ tạo ra bug tiềm ẩn, thoải mái nâng cấp, thiết kế. Rất nh ltv bỏ qua điều này dẫn đến k maintain đc code do chính mình tạo ra.
+- Code k đc chứa nh biến detail, ta nên chia nhỏ hàm ra. Nếu có nhiều biến detail thì khi đọc về sau ta sẽ phải hiểu hết các biến đó làm cái gì thì mới hiểu đc cả hàm. Thay vì v hãy giảm thiểu sao cho nhìn vào lần đầu tiên là hiểu nó làm cái gì, hàm càng ngắn càng tốt.
+VD: 1 test code chia làm 3 phần: khởi tạo dữ liệu, chạy dữ liệu, check kết quả và assert chẳng hạn. Thì trong hàm test đó chỉ cần tầm 3 hàm để làm vc đó, còn 3 hàm detail làm gì thì viết riêng.
+- Vc tách ra 1 hàm và đặt tên hàm đó cho đúng sẽ như kiểu add thêm 1 comment hàm đó là gì. Tách hàm thg khi cần tái sử dụng hoặc chia nhỏ logic phức tạp, cô lập 1 logic ra hàm để chỉ sửa trong hàm đó.
+- Mục đích test trong 1 function nên nhỏ nhất có thể. Ví dụ test 3 thứ độc lập thì k nhét vào 1 func.
+- 1 test phải độc lập vs các test khác, k để lỗi chồng lỗi. Test phải chạy đc trên tất cả môi trường, tránh TH về sau test éo chạy đổ cho MT.
+- Test k đc trả về boolean, kể cả pass hay fail. Ta k đc mất thời gian dài để đánh giá test đúng hay sai. Viết test unit trước production code, vì viết sau sẽ thấy production code rất khó để test. Viết API cho test.
+- Khi có lỗi dev có thể phi vào test class và kiểm tra xem đoạn code đó làm gì ngay. Hãy nghĩ vc viết code là cho 1 người khác k bt LT sử dụng.
 
--Class: public static constant->private static constant->private instance var->(public instance variable ít khi có)-> function->tiện ích of function(những cái chia nhỏ func) ở ngay sau function đó. 
--Pb: Instance variable(biến thực thể): theo ý ta là 1 biến thuộc tính của lớp k có static, ví dụ ta khai báo int age; trong 1 class thì đó gọi là biến instance. Nên nhớ instance còn được hiểu theo 1 nghĩa khác là 1 biến kiểu class. Ví dụ: Student student = new Student(); thì người ta có nói là student là 1 instance of class Student. Và trong java họ kiểm tra if(student instanceof Student){}
-Class variable hay static variable: đã biết r, có từ khóa static.
--Class cx phải nhỏ. Nhưng độ nhỏ hay to của class lại chia theo nhiệm vụ mà nó thực hiện. 1 class có 10 hàm thực hiện 1 tính năng duy nhất tốt hơn là 1 class có 5 hàm thực hiện 5 chức năng khác nhau. Tên class phải thể hiện đc độ ngắn gọn. Tên càng chung càng mơ hồ như Manager, Processor thì càng có nhiều responsibilities.
--Mục đích class làm gì khi diễn đạt bằng lời không nên có thêm từ và, nhưng hoặc. Ví dụ: class SuperDashboard cung cấp cách truy cập tới các đối tượng và cho phép ta kiểm tra version cũng như số lần build-> thế là 3 responsibilities à?(VD các class trong Qt luôn có 1 chức năng)
-VD: public class SuperDashboard extends JFrame implements MetaDataUser {
- public Component getLastFocusedComponent() 
- public void setLastFocused(Component lastFocused) 
- public int getMajorVersionNumber() 
- public int getMinorVersionNumber() 
- public int getBuildNumber()  }
-được tách ra class version: public class Version {
- public int getMajorVersionNumber() 
- public int getMinorVersionNumber() 
- public int getBuildNumber() }
-Quy tắc SRP(Single Responsibility Principle) qtr trong lập trình hướng đối tượng. 1 class-1 trách nhiệm. Nhiều class nhỏ hơn ít class lớn.
--class nên có ít biến. Mỗi phương thức nên gọi 1 hoặc nhiều biến đó để biến và phương thức có sự kết dính.
--Giả sử class có 1 hàm to ta tách thành nhiều hàm nhỏ, nhưng hàm to có 4 biến mà hàm nhỏ cần dùng->để dùng phải pass qua->như v sẽ khiến class to ra là 1, func quá nh args là 2=> dùng biến static instance of cả class là đc ngay, nhưng chỉ vì 1 vài hàm mà class tăng số biến-> tách mẹ nó ra 1 class riêng sẽ tốt hơn.
--Khi code, ta phải hiểu sự thay đổi là liên tục, vc làm trên sẽ đáp ứng điều đó. VD class Sql vi phạm SRP vl:
+- Class: public static constant -> private static constant -> private instance var -> (public instance variable ít khi có) -> function -> tiện ích of function(những cái chia nhỏ func) ở ngay sau function đó. 
+- Class cx phải nhỏ. Nhưng độ nhỏ hay to của class lại chia theo nhiệm vụ mà nó thực hiện. 1 class có 10 hàm thực hiện 1 tính năng duy nhất tốt hơn là 1 class có 5 hàm thực hiện 5 chức năng khác nhau. Tên class phải thể hiện đc độ ngắn gọn. Tên càng chung càng mơ hồ như Manager, Processor thì càng có nhiều responsibilities.
+- Mục đích class làm gì khi diễn đạt bằng lời không nên có thêm từ và, nhưng hoặc. Ví dụ: class SuperDashboard cung cấp cách truy cập tới các đối tượng và cho phép ta kiểm tra version cũng như số lần build -> thế là 3 responsibilities à? => VD các class trong framework Qt là 1 ví dụ tốt cho việc chỉ có 1 chức năng
+VD: 
+public class SuperDashboard extends JFrame implements MetaDataUser {
+  public Component getLastFocusedComponent() 
+  public void setLastFocused(Component lastFocused) 
+  public int getMajorVersionNumber() 
+  public int getMinorVersionNumber() 
+  public int getBuildNumber()  
+}
+được tách ra:
+class version: public class Version {
+  public int getMajorVersionNumber() 
+  public int getMinorVersionNumber() 
+  public int getBuildNumber() 
+}
+=> 1 class - 1 trách nhiệm. Nhiều class nhỏ tốt hơn ít class lớn.
+- Class nên có ít biến. Mỗi phương thức nên gọi 1 hoặc nhiều biến đó để biến và phương thức có sự kết dính.
+- Giả sử class có 1 hàm to ta tách thành nhiều hàm nhỏ, nhưng hàm to có 4 biến mà hàm nhỏ cần dùng -> để dùng phải pass qua -> như v sẽ khiến class to ra và func quá nh args => dùng biến static instance of cả class là đc ngay, nhưng chỉ vì 1 vài hàm mà class tăng số biến -> khi đó nên cân nhắc tách tính năng đó ra 1 class riêng sẽ tốt hơn.
+- Khi code, ta phải hiểu sự thay đổi là liên tục, vc làm trên sẽ đáp ứng điều đó. VD class Sql vi phạm SRP:
 public class Sql {
    public Sql(String table, Column[] columns)
    public String create()
@@ -186,87 +168,79 @@ public class Sql {
    private String columnList(Column[] columns)
    private String valuesList(Object[] fields, final Column[] columns)
    private String selectWithCriteria(String criteria)
-   private String placeholderList(Column[] columns) }
+   private String placeholderList(Column[] columns) 
+}
 Ta tiến hành chia ra nhiều class nhỏ(extends là kế thừa): 
 abstract public class Sql {
    public Sql(String table, Column[] columns)
    abstract public String generate();
 }
-
 public class CreateSql extends Sql {
    public CreateSql(String table, Column[] columns)
    @Override public String generate()
 }
-
 public class SelectSql extends Sql {
    public SelectSql(String table, Column[] columns)
    @Override public String generate()
 }
-
 public class InsertSql extends Sql {
    public InsertSql(String table, Column[] columns, Object[] fields)
    @Override public String generate()
    private String valuesList(Object[] fields, final Column[] columns)
 }
-
 public class SelectWithCriteriaSql extends Sql {
-   public SelectWithCriteriaSql(
-      String table, Column[] columns, Criteria criteria)
+   public SelectWithCriteriaSql(String table, Column[] columns, Criteria criteria)
    @Override public String generate()
 }
-
 public class SelectWithMatchSql extends Sql {
-   public SelectWithMatchSql(
-      String table, Column[] columns, Column column, String pattern)
+   public SelectWithMatchSql(String table, Column[] columns, Column column, String pattern)
    @Override public String generate()
 }
-
-public class FindByKeySql extends Sql
-   public FindByKeySql(
-      String table, Column[] columns, String keyColumn, String keyValue)
+public class FindByKeySql extends Sql {
+   public FindByKeySql(String table, Column[] columns, String keyColumn, String keyValue)
    @Override public String generate()
 }
-
 public class PreparedInsertSql extends Sql {
    public PreparedInsertSql(String table, Column[] columns)
    @Override public String generate() {
    private String placeholderList(Column[] columns)
 }
-
 public class Where {
    public Where(String criteria)
    public String generate()
 }
-
 public class ColumnList {
    public ColumnList(Column[] columns)
    public String generate()
 }
-=>như v, nếu như sau này cần thêm 1 tính năng, ta sẽ thêm 1 class mới mà k động j đến thứ đã code.Nếu sửa 1 tính năng or vd thêm 1 hàm nx phục vụ cho vc lấy columnList thì chỉ cần thêm hàm vào class columnList, chứ kp thêm vào class gốc như ban đầu. Mỗi class rất dễ hiểu và độc lập vs các class khác do trách nhiệm chúng khác nhau.
-=>đó là nguyên tắc open-close principle.
--Các class phải isolate from change. Nếu 1 class phụ thuộc vào 1 chi tiết cụ thể thì khi chi tiết đó thay đổi sẽ tạo nguy cơ k tốt, cả vc test cx k ổn định.VD: class Portfolio phụ thuộc vào TokyoStockExchange. Mà class đó có price thay đổi liên tục. Ta có thể fix bằng cách tạo ra abstract class TokyoExchange lưu currentPrice() và TokyoStockExchange sẽ implement nó. R dùng trong Portfolio:
+=> Như v, nếu như sau này cần thêm 1 tính năng, ta sẽ thêm 1 class mới mà k động j đến thứ đã code. Nếu sửa 1 tính năng or vd thêm 1 hàm nx phục vụ cho vc lấy columnList thì chỉ cần thêm hàm vào class columnList, chứ kp thêm vào class gốc như ban đầu. Mỗi class rất dễ hiểu và độc lập vs các class khác do trách nhiệm chúng khác nhau => Đôi khi làm cho code rối hơn
+- Các class phải isolate from change. Nếu 1 class phụ thuộc vào 1 chi tiết cụ thể thì khi chi tiết đó thay đổi sẽ tạo nguy cơ k tốt, cả vc test cx k ổn định. VD: class Portfolio phụ thuộc vào TokyoStockExchange. Mà class đó có price thay đổi liên tục. Ta có thể fix bằng cách tạo ra abstract class TokyoExchange lưu currentPrice() và TokyoStockExchange sẽ implement nó. R dùng trong Portfolio:
 public interface StockExchange {
-   Money currentPrice(String symbol); }
-
+   Money currentPrice(String symbol); 
+}
 public Portfolio {
    private StockExchange exchange;
    public Portfolio(StockExchange exchange) {
       this.exchange = exchange;
-   } // ... }
--Giả sử bh ta cần test: 
- public class PortfolioTest {
- private FixedStockExchangeStub exchange;
- private Portfolio portfolio; 
- @Before
- protected void setUp() throws Exception {
- exchange = new FixedStockExchangeStub();
- exchange.fix("MSFT", 100);
- portfolio = new Portfolio(exchange); }
- @Test
- public void GivenFiveMSFTTotalShouldBe500() throws Exception {
- portfolio.add(5, "MSFT");
- Assert.assertEquals(500, portfolio.value()); } }
-->Quy tắc này cho rằng: class nên phụ thuộc vào 1 abstract hơn là 1 chi tiết cụ thể.
-->Ở trên, Portfolio phụ thuộc vào StockChange sẽ cô lập tất cả những chi tiết liên quan đến price-> sau này class TokyoStockChange có thay đổi gì khiến code Portfolio bị lỗi thì vc sửa sẽ chỉ gói gọn trong cái StockChange này.
-->vc kiểm thử ta chỉ cần kiểm tra class StockChange giả sử fix 1 số cố định vào xem kết quả có ra đúng k, ở trên ta fix 100 đô, kết quả trả ra 500 kiểm tra có bằng value of portfolio k.
+   } 
+   // ... 
+}
+=> Portfolio k phụ thuộc vào TokyoStockExchange mà TokyoStockExchange phải phụ thuộc vào interface TokyoExchange
+- Giả sử bh ta cần test: 
+public class PortfolioTest {
+  private FixedStockExchangeStub exchange;
+  private Portfolio portfolio; 
+  @Before
+  protected void setUp() throws Exception {
+    exchange = new FixedStockExchangeStub();
+    exchange.fix("MSFT", 100);
+    portfolio = new Portfolio(exchange); 
+  }
+  @Test
+  public void GivenFiveMSFTTotalShouldBe500() throws Exception {
+    portfolio.add(5, "MSFT");
+    Assert.assertEquals(500, portfolio.value()); 
+  } 
+}
+-> Ở trên, Portfolio phụ thuộc vào StockChange sẽ cô lập tất cả những chi tiết liên quan đến price
 
